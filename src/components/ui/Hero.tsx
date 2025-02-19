@@ -1,8 +1,14 @@
+"use client"
+
 import { RiArrowRightUpLine } from "@remixicon/react"
+import { useState } from 'react'
 import { FadeContainer, FadeDiv, FadeSpan } from "../Fade"
+import DemoForm from './DemoForm'
 import GameOfLife from "./HeroBackground"
 
-export function Hero() {
+export default function Hero() {
+  const [isFormOpen, setIsFormOpen] = useState(false)
+
   return (
     <section aria-label="hero">
       <FadeContainer className="relative flex flex-col items-center justify-center">
@@ -37,21 +43,24 @@ export function Hero() {
           <FadeSpan>The Only Autonomous Construction Management Software</FadeSpan>{" "}
           <FadeSpan>Built for homebuilders, remodelers, and specialty contractors.</FadeSpan>
         </p>
-        <FadeDiv>
-          <a
-            data-cal-namespace="30min"
-            data-cal-link="buildease/30min"
-            data-cal-config='{"layout":"month_view"}'
-            className="mt-6 inline-flex cursor-pointer flex-row items-center justify-center gap-1 rounded-md border-b-[1.5px] border-[#2286b9] bg-linear-to-b from-[#1e9bc8] via-[#2286b9] to-[#2286b9] px-5 py-3 leading-4 font-medium tracking-wide whitespace-nowrap text-white shadow-[0_0_0_2px_rgba(0,0,0,0.04),0_0_14px_0_rgba(255,255,255,0.19)] transition-all duration-200 ease-in-out hover:shadow-[#1a6f9e]"
-            href="#"
+        <div className="mt-10 flex items-center gap-x-6">
+          <button
+            onClick={() => setIsFormOpen(true)}
+            className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-[#2286b9] px-8 py-3 font-medium text-white transition duration-300 ease-out hover:bg-[#2286b9]/90"
           >
-            Book a Demo
-          </a>
-        </FadeDiv>
+            <span className="absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center bg-[#366A79] transition-all duration-300 group-hover:translate-x-0">
+              <RiArrowRightUpLine className="size-5" />
+            </span>
+            <span className="flex items-center space-x-2 transition-all duration-300 group-hover:translate-x-full">
+              <span>Book a Demo</span>
+            </span>
+          </button>
+        </div>
         <div className="absolute inset-0 -z-10 flex items-center justify-center">
           <GameOfLife />
         </div>
       </FadeContainer>
+      <DemoForm isOpen={isFormOpen} setIsOpen={setIsFormOpen} />
     </section>
   )
 }

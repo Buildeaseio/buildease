@@ -143,10 +143,10 @@ export default function Features() {
         <div className="relative col-span-2 flex items-center justify-center overflow-hidden">
           <svg
             className="absolute size-full [mask-image:linear-gradient(transparent,white_10rem)]"
-            // style={{
-            //   maskImage:
-            //     "linear-gradient(transparent, white 20rem, white calc(100% - 20rem), transparent)",
-            // }}
+          // style={{
+          //   maskImage:
+          //     "linear-gradient(transparent, white 20rem, white calc(100% - 20rem), transparent)",
+          // }}
           >
             <defs>
               <pattern
@@ -438,10 +438,10 @@ export default function Features() {
         <div className="relative col-span-2 flex items-center justify-center overflow-hidden">
           <svg
             className="absolute size-full [mask-image:linear-gradient(white_10rem,transparent)]"
-            // style={{
-            //   maskImage:
-            //     "linear-gradient(transparent, white 20rem, white calc(100% - 20rem), transparent)",
-            // }}
+          // style={{
+          //   maskImage:
+          //     "linear-gradient(transparent, white 20rem, white calc(100% - 20rem), transparent)",
+          // }}
           >
             <defs>
               <pattern

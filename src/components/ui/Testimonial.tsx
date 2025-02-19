@@ -25,12 +25,10 @@ export default function Testimonial() {
           <blockquote className="relative max-w-2xl text-xl leading-relaxed tracking-tight text-gray-900 md:text-2xl lg:text-3xl">
             <p className="before:absolute before:top-0 before:right-full before:content-['“'] after:text-gray-900/70 after:content-['”']">
               <strong className="font-semibold">
-                Solar transformed our environmental monitoring capabilities.
+                Buildease made us more efficient and profitable. <br />
               </strong>{" "}
               <span className="text-gray-900/70">
-                Their autonomous network provides real-time data on forest
-                health, wildlife patterns, and ecosystem changes with
-                unprecedented precision and efficiency.
+                It transformed our construction operations dramatically. By streamlining our project management processes, we experienced a significant reduction in administrative overhead and communication delays. The platform's intelligent scheduling system helped us optimize crew assignments and resource allocation, resulting in a 30% improvement in project completion times.
               </span>
             </p>
           </blockquote>
@@ -39,7 +37,7 @@ export default function Testimonial() {
           <div className="relative shrink-0 rounded-full bg-white/15 p-0.5 ring-1 ring-white/20">
             <Image
               alt="Gabriel Gratton"
-              src="/images/smiller.jpeg"
+              src="/images/gratton.png"
               width={56}
               height={56}
               className="rounded-full border object-contain"

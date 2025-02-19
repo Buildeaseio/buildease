@@ -28,7 +28,7 @@ export default function Testimonial() {
                 Buildease made us more efficient and profitable.
               </strong>{" "}
               <span className="text-gray-900/70">
-                It transformed our construction operations dramatically. By streamlining our project management processes, we experienced a significant reduction in administrative overhead and communication delays. 
+                It transformed our construction operations dramatically. By streamlining our project management processes, we experienced a significant reduction in administrative overhead and communication delays.
                 The platform's intelligent scheduling system helped us optimize crew assignments and resource allocation, resulting in a 30% improvement in project completion times.
               </span>
             </p>

@@ -30,14 +30,14 @@ export function CallToAction() {
           <Image
             aria-hidden
             alt="Farm with vehicles"
-            src="/images/farm-footer.webp"
+            src="/images/buildease-platform.png"
             height={1000}
             width={1000}
             className="absolute inset-0 -z-10 rounded-2xl blur-xl"
           />
           <Image
             alt="Farm with vehicles"
-            src="/images/farm-footer.webp"
+            src="/images/buildease-platform.png"
             height={1000}
             width={1000}
             className="relative z-10 rounded-2xl"

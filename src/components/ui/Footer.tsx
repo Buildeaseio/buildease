@@ -1,7 +1,7 @@
 import {
   RiGithubFill,
-  RiSlackFill,
-  RiYoutubeFill,
+  RiLinkedinFill,
+  RiTwitterXFill,
 } from "@remixicon/react"
 import Link from "next/link"
 import { SolarLogo } from "../../../public/SolarLogo"
@@ -122,15 +122,15 @@ const Footer = () => {
             <div className="mt-4 flex items-center ml-10">
               {/* Social Icons */}
               <Link
-                href="#"
+                href="https://www.linkedin.com/company/buildeaseio"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-sm p-2 text-gray-700 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-900"
               >
-                <RiYoutubeFill className="size-5" />
+                <RiLinkedinFill className="size-5" />
               </Link>
               <Link
-                href="#"
+                href="https://github.com/Buildeaseio"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-sm p-2 text-gray-700 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-900"
@@ -138,12 +138,12 @@ const Footer = () => {
                 <RiGithubFill className="size-5" />
               </Link>
               <Link
-                href="#"
+                href="https://x.com/buildeaseio"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-sm p-2 text-gray-700 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-900"
               >
-                <RiSlackFill className="size-5" />
+                <RiTwitterXFill className="size-5" />
               </Link>
             </div>
             <div className="ml-10 hidden text-sm text-gray-700 lg:inline">

@@ -11,6 +11,8 @@
   "dependencies": {
     "@calcom/embed-react": "^1.5.2",
     "@fillout/react": "^1.1.2",
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
     "@radix-ui/react-slot": "^1.1.2",
     "@remixicon/react": "^4.6.0",
     "clsx": "^2.1.1",

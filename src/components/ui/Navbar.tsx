@@ -67,7 +67,7 @@ export function NavBar() {
             data-cal-config='{"layout":"month_view"}'
             className="hidden h-10 px-4 sm:block rounded-md border border-gray-300 bg-white hover:bg-gray-50 font-medium"
           >
-            Watch a Demo
+            Book a Demo
           </button>
           <Button
             onClick={() => setOpen(!open)}
@@ -111,7 +111,7 @@ export function NavBar() {
             data-cal-config='{"layout":"month_view"}'
             className="text-lg"
           >
-            Watch a Demo
+            Book a Demo
           </button>
         </nav>
       </div>

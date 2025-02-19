@@ -38,7 +38,7 @@ export default function Testimonial() {
         <div className="mt-14 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
           <div className="relative shrink-0 rounded-full bg-white/15 p-0.5 ring-1 ring-white/20">
             <Image
-              alt="Dr. Sarah Miller"
+              alt="Gabriel Gratton"
               src="/images/smiller.jpeg"
               width={56}
               height={56}
@@ -47,10 +47,10 @@ export default function Testimonial() {
           </div>
           <div>
             <div className="text-base font-medium text-gray-900">
-              Dr. Sarah Miller
+              Gabriel Gratton
             </div>
             <div className="text-sm text-[#C33621]/80">
-              Director of Conservation Technologies
+              CEO of Visionary Enterprise
             </div>
           </div>
         </div>

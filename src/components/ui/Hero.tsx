@@ -45,7 +45,7 @@ export function Hero() {
             className="mt-6 inline-flex cursor-pointer flex-row items-center justify-center gap-1 rounded-md border-b-[1.5px] border-[#2286b9] bg-linear-to-b from-[#1e9bc8] via-[#2286b9] to-[#2286b9] px-5 py-3 leading-4 font-medium tracking-wide whitespace-nowrap text-white shadow-[0_0_0_2px_rgba(0,0,0,0.04),0_0_14px_0_rgba(255,255,255,0.19)] transition-all duration-200 ease-in-out hover:shadow-[#1a6f9e]"
             href="#"
           >
-            Watch a Demo
+            Book a Demo
           </a>
         </FadeDiv>
         <div className="absolute inset-0 -z-10 flex items-center justify-center">

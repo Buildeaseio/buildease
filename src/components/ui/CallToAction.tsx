@@ -17,12 +17,9 @@ export function CallToAction() {
             Begin your smart farming journey today or talk to our agronomists
             about your specific needs.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             <Button asChild className="text-md">
               <Link href="#">Start now</Link>
-            </Button>
-            <Button asChild className="text-md" variant="secondary">
-              <Link href="#">Find nearest dealer</Link>
             </Button>
           </div>
         </div>

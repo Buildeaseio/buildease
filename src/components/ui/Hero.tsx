@@ -46,14 +46,9 @@ export default function Hero() {
         <div className="mt-10 flex items-center gap-x-6">
           <button
             onClick={() => setIsFormOpen(true)}
-            className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-[#2286b9] px-8 py-3 font-medium text-white transition duration-300 ease-out hover:bg-[#2286b9]/90"
+            className="inline-flex items-center justify-center rounded-lg bg-[#2286b9] px-8 py-3 font-medium text-white transition-all duration-200 hover:bg-[#2286b9]/90 cursor-pointer hover:shadow-lg hover:translate-y-[-2px]"
           >
-            <span className="absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center bg-[#366A79] transition-all duration-300 group-hover:translate-x-0">
-              <RiArrowRightUpLine className="size-5" />
-            </span>
-            <span className="flex items-center space-x-2 transition-all duration-300 group-hover:translate-x-full">
-              <span>Book a Demo</span>
-            </span>
+            <span>Join the Waitlist</span>
           </button>
         </div>
         <div className="absolute inset-0 -z-10 flex items-center justify-center">

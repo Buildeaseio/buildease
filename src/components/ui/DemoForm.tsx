@@ -1,38 +1,19 @@
 "use client"
 
-import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import { RiArrowRightUpLine } from "@remixicon/react"
+import { useState } from 'react'
 
 export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (open: boolean) => void }) {
-  const [formData, setFormData] = useState({
+  const [] = useState({
     name: '',
     email: '',
     company: '',
     message: ''
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
+  const [] = useState(false)
+  const [submitted] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    
-    // Here you would typically send the form data to your backend
-    // For now, we'll simulate a submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    setSubmitted(true)
-    setIsSubmitting(false)
-    
-    // Reset form after 2 seconds and close
-    setTimeout(() => {
-      setIsOpen(false)
-      setSubmitted(false)
-      setFormData({ name: '', email: '', company: '', message: '' })
-    }, 2000)
-  }
 
   return (
     <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
@@ -43,10 +24,10 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
           <div className="flex justify-between items-center mb-8">
             <div>
               <Dialog.Title className="text-3xl font-bold text-gray-900">
-                Book Your Demo
+                Join the Waitlist
               </Dialog.Title>
               <p className="mt-2 text-lg text-gray-600">
-                Experience how BuildEase can transform your construction operations
+                Discover how Buildease streamlines your operations, reduces costs, and boosts your bottom line with AI-powered construction management
               </p>
             </div>
             <button
@@ -58,83 +39,123 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
           </div>
 
           {!submitted ? (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700">
-                    Full Name
+            <form 
+              name="contact" 
+              netlify
+              className="space-y-6"
+            >
+              <p className="text-sm text-gray-500 mb-4">* Required Fields</p>
+
+              <div className="grid grid-cols-2 gap-4">
+                <p>
+                  <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700">
+                    First Name*
+                    <input
+                      type="text"
+                      name="firstName"
+                      required
+                      className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
+                    />
                   </label>
+                </p>
+                
+                <p>
+                  <label htmlFor="lastName" className="block text-sm font-semibold text-gray-700">
+                    Last Name*
+                    <input
+                      type="text"
+                      name="lastName"
+                      required
+                      className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
+                    />
+                  </label>
+                </p>
+              </div>
+
+              <p>
+                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700">
+                  Phone*
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
+                  />
+                </label>
+              </p>
+
+              <p>
+                <label htmlFor="company" className="block text-sm font-semibold text-gray-700">
+                  Company*
                   <input
                     type="text"
-                    id="name"
+                    name="company"
                     required
                     className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700">
-                    Work Email
-                  </label>
+                </label>
+              </p>
+
+              <p>
+                <label htmlFor="email" className="block text-sm font-semibold text-gray-700">
+                  Email*
                   <input
                     type="email"
-                    id="email"
+                    name="email"
                     required
                     className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="company" className="block text-sm font-semibold text-gray-700">
-                  Company Name
                 </label>
-                <input
-                  type="text"
-                  id="company"
-                  required
-                  className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
-                  value={formData.company}
-                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                />
-              </div>
+              </p>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700">
-                  Tell us about your needs (Optional)
+              <p>
+                <label htmlFor="builderType" className="block text-sm font-semibold text-gray-700">
+                  Which builder type best describes your business?*
+                  <select
+                    name="builderType"
+                    required
+                    className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
+                  >
+                    <option value="">Select</option>
+                    <option value="residential-homebuilder">Residential – Homebuilder</option>
+                    <option value="specialty-trade">Specialty/Trade Contractor</option>
+                    <option value="residential-remodeler">Residential – Remodeler</option>
+                    <option value="commercial-contractor">Commercial General Contractor</option>
+                  </select>
                 </label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                />
-              </div>
+              </p>
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="group relative w-full inline-flex items-center justify-center overflow-hidden rounded-lg bg-[#2286b9] px-8 py-4 font-medium text-white transition duration-300 ease-out hover:bg-[#2286b9]/90 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <span className="absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center bg-[#366A79] transition-all duration-300 group-hover:translate-x-0">
-                  {isSubmitting ? (
-                    <svg className="h-5 w-5 animate-spin" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                    </svg>
-                  ) : (
-                    <RiArrowRightUpLine className="size-5" />
-                  )}
-                </span>
-                <span className="flex items-center space-x-2 transition-all duration-300 group-hover:translate-x-full">
-                  {isSubmitting ? 'Submitting...' : 'Schedule Demo'}
-                </span>
-              </button>
+              <p>
+                <label htmlFor="annualRevenue" className="block text-sm font-semibold text-gray-700">
+                  What is your average annual revenue?*
+                  <select
+                    name="annualRevenue"
+                    required
+                    className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
+                  >
+                    <option value="">Select</option>
+                    <option value="0-499k">$0 – 499K</option>
+                    <option value="500k-999k">$500K – 999K</option>
+                    <option value="1m-4.99m">$1M – 4.99M</option>
+                    <option value="5m-7.99m">$5M – 7.99M</option>
+                    <option value="8m-10.99m">$8M – 10.99M</option>
+                    <option value="11m-15.99m">$11M – 15.99M</option>
+                    <option value="16m-20.99m">$16M – 20.99M</option>
+                    <option value="21m-25.99m">$21M – 25.99M</option>
+                    <option value="26m-30.99m">$26M – 30.99M</option>
+                    <option value="31m+">$31M+</option>
+                  </select>
+                </label>
+              </p>
+
+              <p>
+                <button
+                  type="submit"
+                  className="group relative w-full inline-flex items-center justify-center overflow-hidden rounded-lg bg-[#2286b9] px-8 py-4 font-medium text-white transition-all duration-200 hover:bg-[#2286b9]/90 hover:shadow-lg hover:translate-y-[-2px] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                >
+                  Submit
+                </button>
+              </p>
             </form>
           ) : (
             <div className="text-center py-12">

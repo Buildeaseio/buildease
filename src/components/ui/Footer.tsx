@@ -1,7 +1,6 @@
 import {
   RiGithubFill,
   RiSlackFill,
-  RiTwitterXFill,
   RiYoutubeFill,
 } from "@remixicon/react"
 import Link from "next/link"
@@ -113,23 +112,15 @@ const Footer = () => {
         <div className="mr-auto flex w-full justify-between lg:w-fit lg:flex-col">
           <Link
             href="/"
-            className="flex items-center font-medium text-gray-700 select-none sm:text-sm"
+            className="flex items-center gap-1 font-medium text-gray-700 select-none sm:text-sm"
           >
-            <SolarLogo className="ml-2 w-20" />
-            <span className="text-xl font-semibold text-gray-900">Buildease</span>
+            <SolarLogo className="ml-5 w-20" />
+            <span className="-ml-2 text-xl font-semibold text-gray-900">Buildease</span>
           </Link>
 
           <div>
-            <div className="mt-4 flex items-center">
+            <div className="mt-4 flex items-center ml-10">
               {/* Social Icons */}
-              <Link
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-sm p-2 text-gray-700 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-900"
-              >
-                <RiTwitterXFill className="size-5" />
-              </Link>
               <Link
                 href="#"
                 target="_blank"
@@ -155,7 +146,7 @@ const Footer = () => {
                 <RiSlackFill className="size-5" />
               </Link>
             </div>
-            <div className="ml-2 hidden text-sm text-gray-700 lg:inline">
+            <div className="ml-10 hidden text-sm text-gray-700 lg:inline">
               &copy; {CURRENT_YEAR} Buildease Software, Inc.
             </div>
           </div>

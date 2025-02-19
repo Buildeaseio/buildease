@@ -40,8 +40,8 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
 
           {!submitted ? (
             <form 
-              name="contact" 
-              netlify
+              name="contact"
+              data-netlify="true"
               className="space-y-6"
             >
               <p className="text-sm text-gray-500 mb-4">* Required Fields</p>

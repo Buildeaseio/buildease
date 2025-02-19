@@ -18,6 +18,7 @@ export function NavBar() {
   const [open, setOpen] = React.useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const scrolled = useScroll(15)
+  const [, setIsFormOpen] = useState(false)
 
   useEffect(() => {
     (async function () {
@@ -90,9 +91,7 @@ export function NavBar() {
             </div>
           </nav>
           <button
-            data-cal-namespace="30min"
-            data-cal-link="buildease/30min"
-            data-cal-config='{"layout":"month_view"}'
+            onClick={() => setIsFormOpen(true)}
             className="hidden h-10 px-4 sm:block rounded-md border border-gray-300 bg-white hover:bg-gray-50 font-medium cursor-pointer"
           >
             Join Waitlist

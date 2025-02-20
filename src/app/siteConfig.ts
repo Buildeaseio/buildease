@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: "Buildease",
+  name: "BuildEase",
+  description: "The Only Autonomous Construction Management Software",
   url: "https://buildease.io",
-  description: "Automation for every Builder.",
   baseLinks: {
     home: "/",
   },

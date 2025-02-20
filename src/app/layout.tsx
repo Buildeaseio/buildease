@@ -1,13 +1,13 @@
 import { GeistSans } from "geist/font/sans"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
 import "./globals.css"
 
 import Footer from "@/components/ui/Footer"
 import { NavBar } from "@/components/ui/Navbar"
 import { siteConfig } from "./siteConfig"
 
-const inter = Inter({ subsets: ["latin"] })
+// Remove or comment out the unused inter variable
+// const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://buildease.io"),
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en">
       <head>

@@ -5,15 +5,42 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
 
 export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (open: boolean) => void }) {
-  const [] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: ''
-  })
-  const [] = useState(false)
-  const [submitted] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setError(null)
+
+    try {
+      const formData = new FormData(e.currentTarget)
+      const data = Object.fromEntries(formData)
+
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to submit form. Please try again.')
+      }
+
+      setSubmitted(true)
+      setTimeout(() => setIsOpen(false), 2000)
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setError(error instanceof Error ? error.message : 'Something went wrong. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
@@ -38,10 +65,24 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
             </button>
           </div>
 
+          {error && (
+            <div className="mb-4 rounded-md bg-red-50 p-4">
+              <div className="flex">
+                <div className="flex-shrink-0">
+                  <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div className="ml-3">
+                  <p className="text-sm font-medium text-red-800">{error}</p>
+                </div>
+              </div>
+            </div>
+          )}
+
           {!submitted ? (
             <form 
-              name="contact"
-              data-netlify="true"
+              onSubmit={handleSubmit}
               className="space-y-6"
             >
               <p className="text-sm text-gray-500 mb-4">* Required Fields</p>
@@ -151,9 +192,10 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
               <p>
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   className="group relative w-full inline-flex items-center justify-center overflow-hidden rounded-lg bg-[#2286b9] px-8 py-4 font-medium text-white transition-all duration-200 hover:bg-[#2286b9]/90 hover:shadow-lg hover:translate-y-[-2px] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                 >
-                  Submit
+                  {isSubmitting ? 'Submitting...' : 'Submit'}
                 </button>
               </p>
             </form>

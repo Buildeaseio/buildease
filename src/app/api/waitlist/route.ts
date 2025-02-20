@@ -13,8 +13,8 @@ export async function POST(req: Request) {
     }
 
     const { error } = await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: ['buildeaseio@gmail.com'], // Now verified for testing
+      from: 'Buildease <buildeaseio@gmail.com>',
+      to: ['christiangaarci6@gmail.com'], // Now verified for testing
       subject: 'BuildEase Waitlist Signup',
       html: `
         <h2>New Waitlist Signup</h2>

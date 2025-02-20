@@ -5,18 +5,22 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { name, email, message } = body;
+    const formData = await request.json();
+    
+    const { firstName, lastName, email, phone, company, builderType, annualRevenue } = formData;
 
     const { error } = await resend.emails.send({
-      from: 'Buildease <buildeaseio@gmail.com>', // Update this with your verified domain
-      to: ['christiangaarci6@gmail.com'], // Where you want to receive the contact form emails
-      subject: `New Contact Form Submission from ${name}`,
+      from: 'onboarding@resend.dev',
+      to: ['buildeaseio@gmail.com'],
+      subject: 'New Demo Request',
       html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
+        <h2>New Demo Request</h2>
+        <p><strong>Name:</strong> ${firstName} ${lastName}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong> ${message}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Company:</strong> ${company}</p>
+        <p><strong>Builder Type:</strong> ${builderType}</p>
+        <p><strong>Annual Revenue:</strong> ${annualRevenue}</p>
       `
     });
 
@@ -29,4 +33,4 @@ export async function POST(request: Request) {
     console.error('Failed to send email:', err);
     return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
   }
-}
+} 

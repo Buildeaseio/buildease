@@ -5,15 +5,51 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
 
 export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (open: boolean) => void }) {
-  const [] = useState({
-    name: '',
-    email: '',
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    phone: '',
     company: '',
-    message: ''
+    email: '',
+    builderType: '',
+    annualRevenue: ''
   })
-  const [] = useState(false)
-  const [submitted] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [, setError] = useState<string | null>(null)
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setError(null)
+
+    try {
+      const formData = new FormData(e.currentTarget)
+      const data = Object.fromEntries(formData)
+
+      const response = await fetch('/api/demo-request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to submit form. Please try again.')
+      }
+
+      setSubmitted(true)
+      setTimeout(() => setIsOpen(false), 2000)
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setError(error instanceof Error ? error.message : 'Something went wrong. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
@@ -40,8 +76,7 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
 
           {!submitted ? (
             <form 
-              name="contact"
-              data-netlify="true"
+              onSubmit={handleSubmit}
               className="space-y-6"
             >
               <p className="text-sm text-gray-500 mb-4">* Required Fields</p>
@@ -52,7 +87,9 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
                     First Name*
                     <input
                       type="text"
-                      name="firstName"
+                      id="firstName"
+                      value={formData.firstName}
+                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                       required
                       className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
                     />
@@ -151,9 +188,10 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
               <p>
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   className="group relative w-full inline-flex items-center justify-center overflow-hidden rounded-lg bg-[#2286b9] px-8 py-4 font-medium text-white transition-all duration-200 hover:bg-[#2286b9]/90 hover:shadow-lg hover:translate-y-[-2px] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                 >
-                  Submit
+                  {isSubmitting ? 'Submitting...' : 'Submit'}
                 </button>
               </p>
             </form>

@@ -55,7 +55,7 @@ export default function Example() {
   return (
     <>
       <div className="mx-auto w-full max-w-6xl px-3 py-8 sm:py-20">
-        <span className="block text-lg font-semibold tracking-tighter text-[#2286B9] animate-pulse drop-shadow-[0_0_8px_rgba(34,134,185,0.5)]">
+        <span className="block text-lg font-semibold tracking-tighter text-[#2286B9]">
           Autonomous Growth Systems
         </span>
         <h2
@@ -80,7 +80,7 @@ export default function Example() {
               Leverage AI to analyze historical data and optimize project planning, ensuring efficient resource allocation and accurate scheduling. 
               Our system enhances design processes by quickly generating multiple scenarios, allowing for informed decision-making and reduced project timelines.
               </p>
-              <div className="mt-12 flex w-fit items-center gap-0.5 rounded bg-white/10 px-2 py-1 text-blue-500 backdrop-blur-[3px]">
+              <div className="mt-12 flex w-fit items-center gap-0.5 rounded bg-white/10 px-2 py-1 text-[#2286B9] backdrop-blur-[3px]">
                 <span>Explore features</span>
                 <RiArrowRightSLine className="mt-0.5 size-5 transition-all group-hover:translate-x-1 group-hover:opacity-100 sm:opacity-20" />
               </div>

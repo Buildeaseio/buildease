@@ -1,23 +1,24 @@
 import {
-  RiCarFill,
+  RiBuilding2Line,
   RiCheckLine,
   RiCircleLine,
   RiCodepenLine,
   RiContrast2Line,
   RiFullscreenFill,
+  RiHammerLine,
+  RiLineChartLine,
   RiLoaderFill,
+  RiMoneyDollarCircleLine,
   RiNotification2Line,
-  RiPlaneFill,
-  RiTruckFill,
+  RiTeamLine,
 } from "@remixicon/react"
-import { Icons } from "../Icons"
 import { Orbit } from "../Orbit"
 import ChipViz from "./ChipViz"
 
 export default function Features() {
   return (
     <section
-      aria-label="Solar Technologies Features for Farms"
+      aria-label="Buildease Features"
       id="solutions"
       className="relative mx-auto max-w-6xl scroll-my-24"
     >
@@ -173,26 +174,26 @@ export default function Features() {
               fill="url(#diagonal-feature-pattern)"
             />
           </svg>
-          <div className="pointer-events-none h-[26rem] p-10 select-none">
+          <div className="pointer-events-none p-10 select-none">
             <div className="relative flex flex-col items-center justify-center">
               <Orbit
                 durationSeconds={40}
-                radiusPx={140}
+                radiusPx={180}
                 keepUpright
                 orbitingObjects={[
                   <div
                     key="obj1"
                     className="relative flex items-center justify-center"
                   >
-                    <RiTruckFill className="z-10 size-5 text-gray-900" />
+                    <RiBuilding2Line className="z-10 size-5 text-gray-900" />
                     <div className="absolute size-10 rounded-full bg-white/50 ring-1 shadow-lg ring-black/5"></div>
                     <div className="absolute -top-5 left-4">
                       <div className="flex gap-1">
-                        <div className="flex items-center justify-center rounded-l-full bg-emerald-500 p-1 text-xs ring-1 ring-gray-200">
+                        <div className="flex items-center justify-center rounded-l-full bg-[#87B922] p-1 text-xs ring-1 ring-gray-200">
                           <RiCircleLine className="size-3 shrink-0 text-white" />
                         </div>
                         <div className="rounded-r-full bg-white/50 py-0.5 pr-1.5 pl-1 text-xs ring-1 ring-gray-200">
-                          Autonomous Systems
+                          Resource Management
                         </div>
                       </div>
                     </div>
@@ -208,11 +209,11 @@ export default function Features() {
                     key="obj2"
                     className="relative flex items-center justify-center"
                   >
-                    <RiPlaneFill className="z-10 size-5 rotate-90 text-gray-900" />
+                    <RiMoneyDollarCircleLine className="z-10 size-5 text-gray-900" />
                     <div className="absolute size-10 rounded-full bg-white/50 ring-1 shadow-lg ring-black/5"></div>
                     <div className="absolute -top-5 left-4">
                       <div className="flex gap-1">
-                        <div className="flex items-center justify-center rounded-l-full bg-emerald-500 p-1 text-xs ring-1 ring-gray-200">
+                        <div className="flex items-center justify-center rounded-l-full bg-[#87B922] p-1 text-xs ring-1 ring-gray-200">
                           <RiLoaderFill className="size-3 shrink-0 animate-spin text-white" />
                         </div>
                         <div className="rounded-r-full bg-white/50 py-0.5 pr-1.5 pl-1 text-xs ring-1 ring-gray-200">
@@ -232,7 +233,7 @@ export default function Features() {
                     key="obj3"
                     className="relative flex items-center justify-center"
                   >
-                    <RiCarFill className="z-10 size-5 text-gray-900" />
+                    <RiHammerLine className="z-10 size-5 text-gray-900" />
                     <div className="absolute size-10 rounded-full bg-white/50 ring-1 shadow-lg ring-black/5"></div>
                     <div
                       style={{
@@ -245,15 +246,15 @@ export default function Features() {
                     key="obj4"
                     className="relative flex items-center justify-center"
                   >
-                    <Icons.QuadCopter className="z-10 size-5 rotate-90 text-gray-900" />
+                    <RiTeamLine className="z-10 size-5 text-gray-900" />
                     <div className="absolute size-10 rounded-full bg-white/50 ring-1 shadow-lg ring-black/5"></div>
                     <div className="absolute -top-5 left-4">
                       <div className="flex gap-1">
-                        <div className="flex items-center justify-center rounded-l-full bg-emerald-500 p-1 text-xs ring-1 ring-gray-200">
+                        <div className="flex items-center justify-center rounded-l-full bg-[#87B922] p-1 text-xs ring-1 ring-gray-200">
                           <RiCheckLine className="size-3 shrink-0 text-white" />
                         </div>
                         <div className="rounded-r-full bg-white/50 py-0.5 pr-1.5 pl-1 text-xs ring-1 ring-gray-200">
-                          Construction Management
+                          Project Management
                         </div>
                       </div>
                     </div>
@@ -269,7 +270,7 @@ export default function Features() {
                     key="obj5"
                     className="relative flex items-center justify-center"
                   >
-                    <RiPlaneFill className="z-10 size-5 rotate-90 text-gray-900" />
+                    <RiLineChartLine className="z-10 size-5 text-gray-900" />
                     <div className="absolute size-10 rounded-full bg-white/50 ring-1 shadow-lg ring-black/5"></div>
                     <div
                       style={{

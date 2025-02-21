@@ -45,8 +45,8 @@ function GlobeCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      style={{ width: 600, height: 600 }}
-      className="absolute -right-52 top-52 z-10 aspect-square size-full max-w-fit transition-transform group-hover:scale-[1.01] sm:top-24 lg:-right-40 lg:top-12"
+      style={{ width: 800, height: 800 }}
+      className="absolute -right-72 top-40 z-10 aspect-square size-full max-w-fit transition-transform group-hover:scale-[1.01] sm:top-12 lg:-right-60 lg:top-0"
     />
   );
 }

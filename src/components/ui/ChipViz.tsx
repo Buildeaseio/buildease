@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react"
 
+
 const ChipViz = () => {
   const createVariants = ({
     scale,

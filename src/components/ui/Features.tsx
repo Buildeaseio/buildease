@@ -2,20 +2,51 @@ import {
   RiBuilding2Line,
   RiCheckLine,
   RiCircleLine,
-  RiCodepenLine,
-  RiContrast2Line,
-  RiFullscreenFill,
   RiHammerLine,
   RiLineChartLine,
   RiLoaderFill,
   RiMoneyDollarCircleLine,
-  RiNotification2Line,
-  RiTeamLine,
-} from "@remixicon/react"
-import { Orbit } from "../Orbit"
-import ChipViz from "./ChipViz"
+  RiTeamLine
+} from "@remixicon/react";
+import 'remixicon/fonts/remixicon.css';
+import { Orbit } from "../Orbit";
+import { AnimatedTooltip } from "./animated-tooltip";
+import ChipViz from "./ChipViz";
 
 export default function Features() {
+  const teamMembers = [
+    {
+      id: 1,
+      name: "Pre Construction",
+      designation: "Planning Phase",
+      image: <i className="ri-road-map-line text-2xl text-[#B95422]"></i>
+    },
+    {
+      id: 2,
+      name: "Project Management",
+      designation: "Operations",
+      image: <i className="ri-home-gear-line text-2xl text-[#B95422]"></i>
+    },
+    {
+      id: 3,
+      name: "Resource Management",
+      designation: "Operations",
+      image: <i className="ri-stack-line text-2xl text-[#B95422]"></i>
+    },
+    {
+      id: 4,
+      name: "Financial Management",
+      designation: "Finance",
+      image: <i className="ri-bank-line text-2xl text-[#B95422]"></i>
+    },
+    {
+      id: 5,
+      name: "Automation",
+      designation: "AI Systems",
+      image: <i className="ri-cpu-line text-2xl text-[#B95422]"></i>
+    }
+  ];
+
   return (
     <section
       aria-label="Buildease Features"
@@ -459,14 +490,14 @@ export default function Features() {
             Build Smarter, Not Harder. Seamless Quality at Scale
           </p>
           <p className="mt-4 text-balance text-gray-700">
-          Utilize AI to continuously monitor construction quality through real-time data analysis. 
+          Utilize AI to continuously monitor construction quality at every stage through real-time data analysis. 
           Our platform detects deviations from project specifications early, allowing for immediate 
           corrections and ensuring that all work meets the highest standards.
           </p>
         </div>
-        <div className="relative col-span-2 flex items-center justify-center overflow-hidden">
+        <div className="relative col-span-2 flex items-center justify-center overflow-visible">
           <svg
-            className="absolute size-full [mask-image:linear-gradient(white_10rem,transparent)]"
+            className="absolute size-full [mask-image:linear-gradient(white_10rem,transparent)] -z-10"
           // style={{
           //   maskImage:
           //     "linear-gradient(transparent, white 20rem, white calc(100% - 20rem), transparent)",
@@ -498,58 +529,37 @@ export default function Features() {
               fill="url(#diagonal-feature-pattern)"
             />
           </svg>
-          <div className="pointer-events-none relative flex size-full h-[26rem] items-center justify-center p-10 select-none">
+          <div className="relative flex size-full h-[26rem] items-center justify-center p-10">
             <div className="relative">
-              <div className="absolute top-[6rem] left-[6rem] z-20">
+              {/* ID 1 - Top Left */}
+              <div className="absolute top-[6rem] left-[6rem] z-50 pointer-events-auto">
                 <div className="relative">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B92287', opacity: '0.8' }}></div>
-                  <div className="relative mx-auto w-fit rounded-full bg-gray-50 p-1 ring-1 shadow-md shadow-black/10 ring-black/10">
-                    <div className="w-fit rounded-full bg-linear-to-b from-white to-gray-100 p-3 ring-1 shadow-[inset_0px_-2px_6px_rgba(0,0,0,0.09),0_3px_5px_0_rgba(0,0,0,0.19)] ring-white/50 ring-inset">
-                      <RiNotification2Line
-                        className="size-5 text-gray-900"
-                        aria-hidden="true"
-                      />
-                    </div>
-                  </div>
+                  <div className="absolute top-1/2 left-1/2 -translate-x-[60%] -translate-y-1/2 size-12 animate-pulse blur-lg" style={{ backgroundColor: '#B95422', opacity: '1' }}></div>
+                  <AnimatedTooltip items={[teamMembers[3]]} />
                 </div>
               </div>
-              <div className="absolute top-[6rem] right-[6rem] z-20">
+
+              {/* ID 2 - Top Right */}
+              <div className="absolute top-[6rem] right-[7rem] z-50 pointer-events-auto">
                 <div className="relative">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B92287', opacity: '0.8' }}></div>
-                  <div className="relative mx-auto w-fit rounded-full bg-gray-50 p-1 ring-1 shadow-md shadow-black/10 ring-black/10">
-                    <div className="w-fit rounded-full bg-linear-to-b from-white to-gray-100 p-3 ring-1 shadow-[inset_0px_-2px_6px_rgba(0,0,0,0.05),0_7px_10px_0_rgba(0,0,0,0.10)] ring-white/50 ring-inset">
-                      <RiContrast2Line
-                        className="size-5 text-gray-900"
-                        aria-hidden="true"
-                      />
-                    </div>
-                  </div>
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B95422', opacity: '1' }}></div>
+                  <AnimatedTooltip items={[teamMembers[2]]} />
                 </div>
               </div>
-              <div className="absolute right-[6rem] bottom-[6rem] z-20">
+
+              {/* ID 3 - Bottom Right */}
+              <div className="absolute bottom-[6rem] right-[7rem] z-50 pointer-events-auto">
                 <div className="relative">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B92287', opacity: '0.8' }}></div>
-                  <div className="relative mx-auto w-fit rounded-full bg-gray-50 p-1 ring-1 shadow-md shadow-black/10 ring-black/10">
-                    <div className="w-fit rounded-full bg-linear-to-b from-white to-gray-100 p-3 ring-1 shadow-[inset_0px_-2px_6px_rgba(0,0,0,0.05),0_7px_10px_0_rgba(0,0,0,0.10)] ring-white/50 ring-inset">
-                      <RiCodepenLine
-                        className="size-5 text-gray-900"
-                        aria-hidden="true"
-                      />
-                    </div>
-                  </div>
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B95422', opacity: '1' }}></div>
+                  <AnimatedTooltip items={[teamMembers[0]]} />
                 </div>
               </div>
-              <div className="absolute bottom-[6rem] left-[6rem] z-20">
+
+              {/* ID 4 - Bottom Left */}
+              <div className="absolute bottom-[6rem] left-[6rem] z-50 pointer-events-auto">
                 <div className="relative">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B92287', opacity: '0.8' }}></div>
-                  <div className="relative mx-auto w-fit rounded-full bg-gray-50 p-1 ring-1 shadow-md shadow-black/10 ring-black/10">
-                    <div className="w-fit rounded-full bg-linear-to-b from-white to-gray-100 p-3 ring-1 shadow-[inset_0px_-2px_6px_rgba(0,0,0,0.05),0_7px_10px_0_rgba(0,0,0,0.10)] ring-white/50 ring-inset">
-                      <RiFullscreenFill
-                        className="size-5 text-gray-900"
-                        aria-hidden="true"
-                      />
-                    </div>
-                  </div>
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B95422', opacity: '1' }}></div>
+                  <AnimatedTooltip items={[teamMembers[1]]} />
                 </div>
               </div>
             </div>
@@ -567,13 +577,14 @@ export default function Features() {
                       style={{
                         animation: `gridMovingLine 5s linear infinite ${index * 1.2}s`,
                         animationFillMode: "backwards",
-                        background: 'linear-gradient(to right, transparent, #2286B9, #B92287, transparent)',
+                        background: 'linear-gradient(to right, transparent, #2286B9, #B95422, transparent)',
                         boxShadow: '0 0 8px rgba(34,134,185,0.6), 0 0 12px rgba(185,34,135,0.4)'
                       }}
                     />
                   </div>
                 </div>
               ))}
+              
               <div className="absolute -translate-x-1/2 -translate-y-1/2">
                 <ChipViz />
               </div>

@@ -1,10 +1,11 @@
+import Testimonial from "@/components/ui/AutonomousFeature"
 import { CallToAction } from "@/components/ui/CallToAction"
+import EstimatingFeature from "@/components/ui/EstimatingFeature"
 import FeatureDivider from "@/components/ui/FeatureDivider"
 import Features from "@/components/ui/Features"
 import Hero from "@/components/ui/Hero"
-import { Map } from "@/components/ui/Map/Map"
-import { SolarAnalytics } from "@/components/ui/SolarAnalytics"
-import Testimonial from "@/components/ui/AutonomousFeature"
+
+
 
 export default function Home() {
   return (
@@ -20,13 +21,9 @@ export default function Home() {
       </div>
       <FeatureDivider className="my-16 max-w-6xl" />
       <div className="px-4 xl:px-0">
-        <Map />
+        <EstimatingFeature />
       </div>
-      <FeatureDivider className="my-16 max-w-6xl" />
-      <div className="mt-12 mb-40 px-4 xl:px-0">
-        <SolarAnalytics />
-      </div>
-      <div className="mt-10 mb-40 px-4 xl:px-0">
+      <div className="mt-40 mb-40 px-4 xl:px-0">
         <CallToAction />
       </div>
     </main>

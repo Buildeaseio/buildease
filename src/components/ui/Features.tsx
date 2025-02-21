@@ -189,7 +189,7 @@ export default function Features() {
                     <div className="absolute size-10 rounded-full bg-white/50 ring-1 shadow-lg ring-black/5"></div>
                     <div className="absolute -top-5 left-4">
                       <div className="flex gap-1">
-                        <div className="flex items-center justify-center rounded-l-full bg-[#B95422] p-1 text-xs ring-1 ring-gray-200">
+                        <div className="flex items-center justify-center rounded-l-full bg-[#2287B9] p-1 text-xs ring-1 ring-gray-200">
                           <RiCircleLine className="size-3 shrink-0 text-white" />
                         </div>
                         <div className="rounded-r-full bg-white/50 py-0.5 pr-1.5 pl-1 text-xs ring-1 ring-gray-200">
@@ -213,7 +213,7 @@ export default function Features() {
                     <div className="absolute size-10 rounded-full bg-white/50 ring-1 shadow-lg ring-black/5"></div>
                     <div className="absolute -top-5 left-4">
                       <div className="flex gap-1">
-                        <div className="flex items-center justify-center rounded-l-full bg-[#B95422] p-1 text-xs ring-1 ring-gray-200">
+                        <div className="flex items-center justify-center rounded-l-full bg-[#2287B9] p-1 text-xs ring-1 ring-gray-200">
                           <RiLoaderFill className="size-3 shrink-0 animate-spin text-white" />
                         </div>
                         <div className="rounded-r-full bg-white/50 py-0.5 pr-1.5 pl-1 text-xs ring-1 ring-gray-200">
@@ -237,7 +237,7 @@ export default function Features() {
                     <div className="absolute size-10 rounded-full bg-white/50 ring-1 shadow-lg ring-black/5"></div>
                     <div className="absolute -top-5 left-4">
                     <div className="flex gap-1">
-                        <div className="flex items-center justify-center rounded-l-full bg-[#B95422] p-1 text-xs ring-1 ring-gray-200">
+                        <div className="flex items-center justify-center rounded-l-full bg-[#2287B9] p-1 text-xs ring-1 ring-gray-200">
                           <RiLoaderFill className="size-3 shrink-0 animate-spin text-white" />
                         </div>
                         <div className="rounded-r-full bg-white/50 py-0.5 pr-1.5 pl-1 text-xs ring-1 ring-gray-200 min-w-[60px]">
@@ -260,7 +260,7 @@ export default function Features() {
                     <div className="absolute size-10 rounded-full bg-white/50 ring-1 shadow-lg ring-black/5"></div>
                     <div className="absolute -top-5 left-4">
                       <div className="flex gap-1">
-                        <div className="flex items-center justify-center rounded-l-full bg-[#B95422] p-1 text-xs ring-1 ring-gray-200">
+                        <div className="flex items-center justify-center rounded-l-full bg-[#2287B9] p-1 text-xs ring-1 ring-gray-200">
                           <RiCheckLine className="size-3 shrink-0 text-white" />
                         </div>
                         <div className="rounded-r-full bg-white/50 py-0.5 pr-1.5 pl-1 text-xs ring-1 ring-gray-200">
@@ -284,7 +284,7 @@ export default function Features() {
                     <div className="absolute size-10 rounded-full bg-white/50 ring-1 shadow-lg ring-black/5"></div>
                     <div className="absolute -top-5 left-4">
                       <div className="flex gap-1">
-                        <div className="flex items-center justify-center rounded-l-full bg-[#B95422] p-1 text-xs ring-1 ring-gray-200">
+                        <div className="flex items-center justify-center rounded-l-full bg-[#2287B9] p-1 text-xs ring-1 ring-gray-200">
                           <RiLoaderFill className="size-3 shrink-0 animate-spin text-white" />
                         </div>
                         <div className="rounded-r-full bg-white/50 py-0.5 pr-1.5 pl-1 text-xs ring-1 ring-gray-200">
@@ -502,7 +502,7 @@ export default function Features() {
             <div className="relative">
               <div className="absolute top-[6rem] left-[6rem] z-20">
                 <div className="relative">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#2286B9', opacity: '0.8' }}></div>
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B92287', opacity: '0.8' }}></div>
                   <div className="relative mx-auto w-fit rounded-full bg-gray-50 p-1 ring-1 shadow-md shadow-black/10 ring-black/10">
                     <div className="w-fit rounded-full bg-linear-to-b from-white to-gray-100 p-3 ring-1 shadow-[inset_0px_-2px_6px_rgba(0,0,0,0.09),0_3px_5px_0_rgba(0,0,0,0.19)] ring-white/50 ring-inset">
                       <RiNotification2Line
@@ -515,7 +515,7 @@ export default function Features() {
               </div>
               <div className="absolute top-[6rem] right-[6rem] z-20">
                 <div className="relative">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#2286B9', opacity: '0.8' }}></div>
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B92287', opacity: '0.8' }}></div>
                   <div className="relative mx-auto w-fit rounded-full bg-gray-50 p-1 ring-1 shadow-md shadow-black/10 ring-black/10">
                     <div className="w-fit rounded-full bg-linear-to-b from-white to-gray-100 p-3 ring-1 shadow-[inset_0px_-2px_6px_rgba(0,0,0,0.05),0_7px_10px_0_rgba(0,0,0,0.10)] ring-white/50 ring-inset">
                       <RiContrast2Line
@@ -528,7 +528,7 @@ export default function Features() {
               </div>
               <div className="absolute right-[6rem] bottom-[6rem] z-20">
                 <div className="relative">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#2286B9', opacity: '0.8' }}></div>
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B92287', opacity: '0.8' }}></div>
                   <div className="relative mx-auto w-fit rounded-full bg-gray-50 p-1 ring-1 shadow-md shadow-black/10 ring-black/10">
                     <div className="w-fit rounded-full bg-linear-to-b from-white to-gray-100 p-3 ring-1 shadow-[inset_0px_-2px_6px_rgba(0,0,0,0.05),0_7px_10px_0_rgba(0,0,0,0.10)] ring-white/50 ring-inset">
                       <RiCodepenLine
@@ -541,7 +541,7 @@ export default function Features() {
               </div>
               <div className="absolute bottom-[6rem] left-[6rem] z-20">
                 <div className="relative">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#2286B9', opacity: '0.8' }}></div>
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B92287', opacity: '0.8' }}></div>
                   <div className="relative mx-auto w-fit rounded-full bg-gray-50 p-1 ring-1 shadow-md shadow-black/10 ring-black/10">
                     <div className="w-fit rounded-full bg-linear-to-b from-white to-gray-100 p-3 ring-1 shadow-[inset_0px_-2px_6px_rgba(0,0,0,0.05),0_7px_10px_0_rgba(0,0,0,0.10)] ring-white/50 ring-inset">
                       <RiFullscreenFill
@@ -563,10 +563,12 @@ export default function Features() {
                   <div className="relative">
                     <div className="h-0.5 w-60 bg-linear-to-r from-gray-300 to-transparent" />
                     <div
-                      className="absolute top-0 left-0 h-0.5 w-28 bg-linear-to-r from-transparent via-blue-300 to-transparent"
+                      className="absolute top-0 left-0 h-0.5 w-28 blur-[2px]"
                       style={{
                         animation: `gridMovingLine 5s linear infinite ${index * 1.2}s`,
                         animationFillMode: "backwards",
+                        background: 'linear-gradient(to right, transparent, #2286B9, #B92287, transparent)',
+                        boxShadow: '0 0 8px rgba(34,134,185,0.6), 0 0 12px rgba(185,34,135,0.4)'
                       }}
                     />
                   </div>

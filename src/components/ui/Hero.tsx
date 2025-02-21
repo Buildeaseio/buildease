@@ -43,9 +43,13 @@ export default function Hero() {
           <FadeSpan>The Only Autonomous Construction Management Software</FadeSpan>{" "}
           <FadeSpan>Built for homebuilders, remodelers, and specialty contractors.</FadeSpan>
         </p>
-        <div className="mt-10 flex items-center gap-x-6">
+        <div className="mt-10 flex items-center gap-x-6 relative z-10">
           <button
-            onClick={() => setIsFormOpen(true)}
+            type="button"
+            onClick={() => {
+              console.log('Button clicked, setting form to open');
+              setIsFormOpen(true);
+            }}
             className="inline-flex items-center justify-center rounded-lg bg-[#2286b9] px-8 py-3 font-medium text-white transition-all duration-200 hover:bg-[#2286b9]/90 cursor-pointer hover:shadow-lg hover:translate-y-[-2px]"
           >
             <span>Join the Waitlist</span>

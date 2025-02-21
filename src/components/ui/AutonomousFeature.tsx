@@ -87,13 +87,13 @@ export default function Example() {
             </div>
             <GlobeCanvas />
           </a>
-          <div className="rounded-b-2xl rounded-t bg-gradient-to-br from-blue-400 to-blue-600 p-8 shadow-lg shadow-blue-500/20 lg:rounded-l lg:rounded-r-2xl">
+          <div className="rounded-b-2xl rounded-t bg-gradient-to-br from-[#2286B9] to-[#1a6991] p-8 shadow-lg shadow-[#2286B9]/20 lg:rounded-l lg:rounded-r-2xl">
             <figure className="flex h-full flex-col justify-between">
               <blockquote className="text-base font-medium text-gray-50 sm:text-lg/8">
                 <p className="relative bg-gradient-to-br from-blue-100 to-white bg-clip-text font-medium leading-7 tracking-tighter text-transparent before:absolute before:right-full before:top-0">
-                Buildease has given us a clear edge over the competition at Visionary Enterprise. 
-                Its AI-driven tools, like predictive scheduling and automated quality control, streamline our processes, 
-                cut costs, and ensure top-tier results. This game-changing platform is the reason we stay ahead in the industry!
+                  &quot;Buildease has given us a clear edge over the competition at Visionary Enterprise. 
+                  Its AI-driven tools, like predictive scheduling and automated quality control, streamline our processes, 
+                  cut costs, and ensure top-tier results. This game-changing platform is the reason we stay ahead in the industry.&quot;
                 </p>
               </blockquote>
               <figcaption className="mt-8 flex items-center space-x-4 sm:mt-0">

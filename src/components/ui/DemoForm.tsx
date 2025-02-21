@@ -24,28 +24,31 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
     setError(null)
 
     try {
-      const formData = new FormData(e.currentTarget)
-      const data = Object.fromEntries(formData)
+      console.log('Submitting form data:', formData)
 
       const response = await fetch('/api/demo-request', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(formData),
       })
 
       const result = await response.json()
+      console.log('Server response:', result)
 
       if (!response.ok) {
-        throw new Error(result.error || 'Failed to submit form. Please try again.')
+        const errorMessage = typeof result.error === 'object' 
+          ? JSON.stringify(result.error) 
+          : result.error || 'Failed to submit form'
+        throw new Error(errorMessage)
       }
 
       setSubmitted(true)
       setTimeout(() => setIsOpen(false), 2000)
     } catch (error) {
-      console.error('Form submission error:', error)
-      setError(error instanceof Error ? error.message : 'Something went wrong. Please try again.')
+      console.error('Detailed error:', error)
+      setError(error instanceof Error ? error.message : 'Something went wrong')
     } finally {
       setIsSubmitting(false)
     }

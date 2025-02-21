@@ -4,7 +4,7 @@ import Features from "@/components/ui/Features"
 import Hero from "@/components/ui/Hero"
 import { Map } from "@/components/ui/Map/Map"
 import { SolarAnalytics } from "@/components/ui/SolarAnalytics"
-import Testimonial from "@/components/ui/Testimonial"
+import Testimonial from "@/components/ui/AutonomousFeature"
 
 export default function Home() {
   return (

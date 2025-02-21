@@ -358,26 +358,15 @@ export default function Features() {
 
             <div className="pointer-events-none relative h-full select-none">
               <div className="absolute top-[192px] left-[191.8px]">
-                <div className="flex h-12 w-12 items-center justify-center bg-white ring-1 shadow-sm ring-black/15">
-                  <svg
-                    viewBox="0 0 3000 3000"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-8 w-8"
-                    fill="#2286b9"
-                  >
-                    <g transform="translate(0.000000,3000.000000) scale(0.100000,-0.100000)">
-                      <path d="M6530 23928 l0 -4513 1310 1310 1310 1310 0 1887 0 1888 4138 0 4137 0 3493 -3493 3492 -3492 -4618 -4618 -4617 -4617 -920 920 -920 920 3700 3700 3700 3700 -1850 1850 -1850 1850 -1860 0 -1860 0 -3393 -3393 -3392 -3392 0 -615 0 -615 3858 -3858 3857 -3857 930 0 930 0 3235 3235 3235 3235 920 -920 920 -920 -3620 -3620 -3620 -3620 -4012 0 -4013 0 0 1888 0 1887 -1310 1310 -1310 1310 0 -4513 0 -4512 5868 0 5867 0 4071 4073 c2644 2645 4095 4104 4141 4162 472 607 657 1335 528 2088 -78 462 -286 899 -599 1262 -38 44 -497 509 -1020 1033 l-951 952 991 993 c607 608 1016 1025 1056 1077 238 312 386 613 478 975 63 247 75 353 75 650 0 297 -12 402 -75 651 -48 187 -92 309 -179 489 -81 169 -155 290 -275 450 -79 106 -535 567 -4040 4073 l-3951 3952 -5992 0 -5993 0 0 -4512z m9945 -4568 l540 -540 -2768 -2768 -2767 -2767 -922 923 -923 922 2385 2385 2385 2385 765 0 765 0 540 -540z" />
-                    </g>
-                  </svg>
+                <div className="flex h-12 w-12 items-center justify-center bg-[#B92287] ring-1 shadow-sm ring-black/15">
+                  <RiMoneyDollarCircleLine className="size-5 text-white" />
                 </div>
               </div>
               <div className="absolute top-[144px] left-[48px]">
                 <div className="relative">
                   <div className="absolute inset-0 size-12 animate-pulse" style={{ backgroundColor: '#2286b9' }}></div>
-                  <div className="relative flex h-12 w-12 items-center justify-center bg-white ring-1 shadow-sm ring-black/15">
-                    <span className="text-sm font-medium text-gray-500">
-                      14°C
-                    </span>
+                  <div className="relative flex h-12 w-12 items-center justify-center bg-[#B92287] ring-1 shadow-sm ring-black/15">
+                    <RiMoneyDollarCircleLine className="size-5 text-white" />
                   </div>
                 </div>
               </div>
@@ -385,10 +374,8 @@ export default function Features() {
               <div className="absolute top-[48px] left-[144px]">
                 <div className="relative">
                   <div className="absolute inset-0 size-12 animate-pulse" style={{ backgroundColor: '#2286b9' }}></div>
-                  <div className="relative flex h-12 w-12 items-center justify-center bg-white ring-1 shadow-sm ring-black/15">
-                    <span className="text-sm font-medium text-gray-500">
-                      18°C
-                    </span>
+                  <div className="relative flex h-12 w-12 items-center justify-center bg-[#B92287] ring-1 shadow-sm ring-black/15">
+                    <RiMoneyDollarCircleLine className="size-5 text-white" />
                   </div>
                 </div>
               </div>
@@ -396,10 +383,8 @@ export default function Features() {
               <div className="absolute top-[96px] left-[240px]">
                 <div className="relative">
                   <div className="absolute inset-0 size-12 animate-pulse" style={{ backgroundColor: '#2286b9' }}></div>
-                  <div className="relative flex h-12 w-12 items-center justify-center bg-white ring-1 shadow-sm ring-black/15">
-                    <span className="text-sm font-medium text-gray-500">
-                      17°C
-                    </span>
+                  <div className="relative flex h-12 w-12 items-center justify-center bg-[#B92287] ring-1 shadow-sm ring-black/15">
+                    <RiMoneyDollarCircleLine className="size-5 text-white" />
                   </div>
                 </div>
               </div>
@@ -407,10 +392,8 @@ export default function Features() {
               <div className="absolute top-[240px] left-[385px]">
                 <div className="relative">
                   <div className="absolute inset-0 size-12 animate-pulse" style={{ backgroundColor: '#2286b9' }}></div>
-                  <div className="relative flex h-12 w-12 items-center justify-center bg-white ring-1 shadow-sm ring-black/15">
-                    <span className="text-sm font-medium text-gray-500">
-                      14°C
-                    </span>
+                  <div className="relative flex h-12 w-12 items-center justify-center bg-[#B92287] ring-1 shadow-sm ring-black/15">
+                    <RiMoneyDollarCircleLine className="size-5 text-white" />
                   </div>
                 </div>
               </div>
@@ -418,10 +401,8 @@ export default function Features() {
               <div className="absolute top-[337px] left-[336px]">
                 <div className="relative">
                   <div className="absolute inset-0 size-12 animate-pulse" style={{ backgroundColor: '#2286b9' }}></div>
-                  <div className="relative flex h-12 w-12 items-center justify-center bg-white ring-1 shadow-sm ring-black/15">
-                    <span className="text-sm font-medium text-gray-500">
-                      12°C
-                    </span>
+                  <div className="relative flex h-12 w-12 items-center justify-center bg-[#B92287] ring-1 shadow-sm ring-black/15">
+                    <RiMoneyDollarCircleLine className="size-5 text-white" />
                   </div>
                 </div>
               </div>
@@ -429,10 +410,8 @@ export default function Features() {
               <div className="absolute top-[288px] left-[144px]">
                 <div className="relative">
                   <div className="absolute inset-0 size-12 animate-pulse" style={{ backgroundColor: '#2286b9' }}></div>
-                  <div className="relative flex h-12 w-12 items-center justify-center bg-white ring-1 shadow-sm ring-black/15">
-                    <span className="text-sm font-medium text-gray-500">
-                      17°C
-                    </span>
+                  <div className="relative flex h-12 w-12 items-center justify-center bg-[#B92287] ring-1 shadow-sm ring-black/15">
+                    <RiMoneyDollarCircleLine className="size-5 text-white" />
                   </div>
                 </div>
               </div>

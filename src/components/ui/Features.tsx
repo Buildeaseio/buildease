@@ -452,16 +452,16 @@ export default function Features() {
         </div>
         <div className="col-span-2 my-auto px-2">
           <h2 className="relative text-lg font-semibold tracking-tight" style={{ color: '#2286b9' }}>
-            Easy Expansion
+            Automated Quality Control
             <div className="absolute top-1 -left-[7px] h-5 w-[3px] rounded-r-sm" style={{ backgroundColor: '#2286b9' }} />
           </h2>
           <p className="mt-2 text-3xl font-semibold tracking-tighter text-balance text-gray-900 md:text-4xl">
-            Scale your operations with plug-and-play integrations
+            Build Smarter, Not Harder. Seamless Quality at Scale
           </p>
           <p className="mt-4 text-balance text-gray-700">
-            Add new sensors and capabilities to your farm network with zero
-            setup required. Our systems automatically connect and coordinate
-            with each other.
+          Utilize AI to continuously monitor construction quality through real-time data analysis. 
+          Our platform detects deviations from project specifications early, allowing for immediate 
+          corrections and ensuring that all work meets the highest standards.
           </p>
         </div>
         <div className="relative col-span-2 flex items-center justify-center overflow-hidden">

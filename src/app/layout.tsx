@@ -1,5 +1,5 @@
-import { GeistSans } from "geist/font/sans"
-import type { Metadata } from "next"
+import { Inter } from 'next/font/google'
+import type { Metadata } from 'next/types'
 import 'remixicon/fonts/remixicon.css'
 import "./globals.css"
 
@@ -7,8 +7,7 @@ import Footer from "@/components/ui/Footer"
 import { NavBar } from "@/components/ui/Navbar"
 import { siteConfig } from "./siteConfig"
 
-// Remove or comment out the unused inter variable
-// const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://buildease.io"),
@@ -58,7 +57,7 @@ export default function RootLayout({
         <title>Buildease</title>
       </head>
       <body
-        className={`${GeistSans.className} min-h-screen overflow-x-hidden scroll-auto bg-gray-50 antialiased selection:bg-orange-100 selection:text-orange-600`}
+        className={`${inter.className} min-h-screen overflow-x-hidden scroll-auto bg-gray-50 antialiased selection:bg-orange-100 selection:text-orange-600`}
       >
         <NavBar />
         {children}

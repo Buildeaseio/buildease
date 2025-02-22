@@ -534,7 +534,7 @@ export default function Features() {
               {/* ID 1 - Top Left */}
               <div className="absolute top-[6rem] left-[6rem] z-50 pointer-events-auto">
                 <div className="relative">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-[60%] -translate-y-1/2 size-12 animate-pulse blur-lg" style={{ backgroundColor: '#B95422', opacity: '1' }}></div>
+                  <div className="absolute top-1/2 left-[68%] -translate-x-[60%] -translate-y-1/2 size-12 animate-pulse blur-lg" style={{ backgroundColor: '#B95422', opacity: '1' }}></div>
                   <AnimatedTooltip items={[teamMembers[3]]} />
                 </div>
               </div>
@@ -542,7 +542,7 @@ export default function Features() {
               {/* ID 2 - Top Right */}
               <div className="absolute top-[6rem] right-[7rem] z-50 pointer-events-auto">
                 <div className="relative">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B95422', opacity: '1' }}></div>
+                  <div className="absolute top-1/2 left-[68%] -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B95422', opacity: '1' }}></div>
                   <AnimatedTooltip items={[teamMembers[2]]} />
                 </div>
               </div>
@@ -550,7 +550,7 @@ export default function Features() {
               {/* ID 3 - Bottom Right */}
               <div className="absolute bottom-[6rem] right-[7rem] z-50 pointer-events-auto">
                 <div className="relative">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B95422', opacity: '1' }}></div>
+                  <div className="absolute top-1/2 left-[68%] -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B95422', opacity: '1' }}></div>
                   <AnimatedTooltip items={[teamMembers[0]]} />
                 </div>
               </div>
@@ -558,7 +558,7 @@ export default function Features() {
               {/* ID 4 - Bottom Left */}
               <div className="absolute bottom-[6rem] left-[6rem] z-50 pointer-events-auto">
                 <div className="relative">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B95422', opacity: '1' }}></div>
+                  <div className="absolute top-1/2 left-[68%] -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B95422', opacity: '1' }}></div>
                   <AnimatedTooltip items={[teamMembers[1]]} />
                 </div>
               </div>

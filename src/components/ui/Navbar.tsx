@@ -56,7 +56,7 @@ export function NavBar() {
                 <div className="relative">
                   <button 
                     onClick={() => setDropdownOpen(!dropdownOpen)}
-                    className="px-2 py-1 text-gray-900 transition-colors duration-200 hover:text-[#2286b9] flex items-center gap-1"
+                    className="px-2 py-1 text-gray-900 transition-colors duration-200 hover:text-[#2286b9] flex items-center gap-1 cursor-pointer"
                   >
                     Products
                     <svg 

@@ -720,7 +720,6 @@ export const SVGMap = (props: SVGProps<SVGSVGElement>) => {
     </svg>
   )
 }
-
 const GradientColors = () => {
   return (
     <>
@@ -730,3 +729,4 @@ const GradientColors = () => {
     </>
   )
 }
+

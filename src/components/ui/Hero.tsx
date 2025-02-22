@@ -1,7 +1,7 @@
 "use client"
 
-import { RiArrowRightUpLine } from "@remixicon/react"
 import { useState } from 'react'
+import { RiArrowRightUpLine } from "react-icons/ri"
 import { FadeContainer, FadeDiv, FadeSpan } from "../Fade"
 import DemoForm from './DemoForm'
 import GameOfLife from "./HeroBackground"
@@ -37,7 +37,9 @@ export default function Hero() {
         <h1 className="mt-8 text-center text-5xl font-semibold tracking-tighter text-gray-900 sm:text-8xl sm:leading-[5.5rem]">
           <FadeSpan>Autonomy</FadeSpan> <FadeSpan>for</FadeSpan>
           <br />
-          <FadeSpan>every</FadeSpan> <FadeSpan>Builder</FadeSpan>
+          <div className="mt-4">
+            <FadeSpan>every</FadeSpan> <FadeSpan>Builder</FadeSpan>
+          </div>
         </h1>
         <p className="mt-5 max-w-xl text-center text-base text-balance text-gray-700 sm:mt-8 sm:text-xl">
           <FadeSpan>The Only Autonomous Construction Management Software</FadeSpan>{" "}

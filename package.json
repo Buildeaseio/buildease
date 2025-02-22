@@ -31,7 +31,7 @@
     "react-dom": "latest",
     "react-icons": "^5.5.0",
     "remixicon": "^4.6.0",
-    "resend": "latest",
+    "resend": "^4.1.2",
     "shadcn-ui": "^0.9.4",
     "tailwind-merge": "^2.6.0",
     "tailwind-variants": "^0.3.1"

@@ -29,12 +29,12 @@ const stats = [
   {
     name: 'Speed Multiplier',
     value: '5x',
-    description: 'Send out estimates5x faster than traditional methods, allowing contractors to generate bids in minutes instead of days.'
+    description: 'Send out estimates 5x faster than traditional methods, allowing contractors to generate bids in minutes instead of days.'
   },
   {
     name: 'Cost Savings',
     value: <span className="whitespace-nowrap">$100k+</span>,
-    description: 'Save up to$100,000+ per year on miscalculations and inefficiencies in bidding and procurement.'
+    description: 'Save up to $100k+ per year on miscalculations and inefficiencies in bidding and procurement.'
   },
 ];
 
@@ -53,29 +53,20 @@ export default function Example() {
       heading.style.setProperty('--mouse-y', `${y}px`);
     };
 
-    const updateGradient = () => {
-      if (!heading) return;
-      const scroll = window.scrollY;
-      const rotation = scroll * 0.1;
-      heading.style.backgroundImage = `linear-gradient(${rotation}deg, #1a1a1a, #4a4a4a)`;
-    };
-
     heading.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('scroll', updateGradient);
 
     return () => {
       heading.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('scroll', updateGradient);
     };
   }, []);
 
   return (
     <section className="py-24 px-4 xl:px-0">
       <div className="mx-auto w-full max-w-6xl text-center">
-        <Badge className="mx-auto">Security at Scale</Badge>
+        <Badge className="mx-auto">Estimating at Scale</Badge>
         <h2
           ref={headingRef}
-          className="relative mx-auto mt-2 inline-block bg-gradient-to-br from-gray-900 to-gray-800 bg-clip-text py-2 text-4xl font-bold tracking-tighter text-transparent transition-all duration-200 before:absolute before:left-[var(--mouse-x)] before:top-[var(--mouse-y)] before:z-0 before:h-32 before:w-32 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-gradient-to-br before:from-[#2286B9] before:to-transparent before:opacity-100 before:content-[''] before:mix-blend-color dark:from-black dark:to-gray-300 sm:text-6xl"
+          className="relative mx-auto mt-2 inline-block bg-gradient-to-b from-gray-900 to-gray-800 bg-clip-text py-2 text-4xl font-bold tracking-tighter text-transparent transition-all duration-200 before:absolute before:left-[var(--mouse-x)] before:top-[var(--mouse-y)] before:z-0 before:h-32 before:w-32 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-gradient-to-b before:from-[#2286B9] before:to-transparent before:opacity-100 before:content-[''] before:mix-blend-color dark:from-black dark:to-gray-300 sm:text-6xl"
         >
           Architected for speed and reliability
         </h2>

@@ -43,16 +43,21 @@ export function NavBar() {
       >
         <div className="w-full md:my-auto">
           <div className="relative flex items-center justify-between">
+            {/* Logo - Visible on both mobile and desktop */}
             <Link href={siteConfig.baseLinks.home} aria-label="Home" className="flex items-center gap-2">
               <span className="sr-only">Buildease Logo</span>
               <SolarLogo className="h-8 w-8" />
               <span className="text-xl font-semibold text-gray-900">Buildease</span>
             </Link>
+
+            {/* Desktop Navigation */}
             <nav className="hidden sm:block md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:transform">
               <div className="flex items-center gap-10 font-medium">
+                {/* Desktop menu items */}
                 <Link className="px-2 py-1 text-gray-900 transition-colors duration-200 hover:text-[#2286b9]" href="/solutions">
                   Solutions
                 </Link>
+                {/* Desktop dropdown */}
                 <div className="relative">
                   <button 
                     onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -88,12 +93,16 @@ export function NavBar() {
                 </Link>
               </div>
             </nav>
+
+            {/* Desktop Waitlist Button */}
             <button
               onClick={() => setIsFormOpen(true)}
               className="hidden h-10 px-4 sm:block rounded-md border border-gray-300 bg-white hover:bg-gray-50 font-medium cursor-pointer"
             >
               Join Waitlist
             </button>
+
+            {/* Mobile Menu Toggle Button */}
             <Button
               onClick={() => setOpen(!open)}
               variant="secondary"
@@ -101,18 +110,14 @@ export function NavBar() {
               aria-label={open ? "CloseNavigation Menu" : "Open Navigation Menu"}
             >
               {!open ? (
-                <RiMenuFill
-                  className="size-6 shrink-0 text-gray-900"
-                  aria-hidden
-                />
+                <RiMenuFill className="size-6 shrink-0 text-gray-900" aria-hidden />
               ) : (
-                <RiCloseFill
-                  className="size-6 shrink-0 text-gray-900"
-                  aria-hidden
-                />
+                <RiCloseFill className="size-6 shrink-0 text-gray-900" aria-hidden />
               )}
             </Button>
           </div>
+
+          {/* Mobile Navigation Menu */}
           <nav
             className={cx(
               "mt-6 flex flex-col gap-6 text-lg ease-in-out will-change-transform sm:hidden",
@@ -125,10 +130,35 @@ export function NavBar() {
                   Solutions
                 </Link>
               </li>
-              <li onClick={() => setOpen(false)}>
-                <Link href="/use-cases" className="text-gray-900 hover:text-[#2286b9]">
-                  Use Cases
-                </Link>
+              <li>
+                <button 
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  className="text-gray-900 hover:text-[#2286b9] flex items-center justify-center w-full gap-1"
+                >
+                  Products
+                  <svg 
+                    className={`w-4 h-4 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {dropdownOpen && (
+                  <div className="mt-2 space-y-2">
+                    <Link 
+                      href="/use-cases" 
+                      className="block text-gray-900 hover:text-[#2286b9]"
+                      onClick={() => {
+                        setDropdownOpen(false);
+                        setOpen(false);
+                      }}
+                    >
+                      Use Cases
+                    </Link>
+                  </div>
+                )}
               </li>
               <li onClick={() => setOpen(false)}>
                 <Link href="/products" className="text-gray-900 hover:text-[#2286b9]">
@@ -136,12 +166,6 @@ export function NavBar() {
                 </Link>
               </li>
             </ul>
-            <button
-              onClick={() => setIsFormOpen(true)}
-              className="w-full rounded-md border border-gray-300 bg-white py-2 hover:bg-gray-50 font-medium"
-            >
-              Join Waitlist
-            </button>
           </nav>
         </div>
       </header>

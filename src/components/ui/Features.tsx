@@ -533,13 +533,14 @@ export default function Features() {
         </div>
         
         {/* Quality Control Visualization */}
-        <div className="relative col-span-2 flex items-center justify-center overflow-visible">
+        <div className="relative col-span-2 flex items-center justify-center overflow-visible 
+          /* Mobile styles */
+          -mx-10 px-4
+          /* Desktop styles */
+          sm:mx-0 sm:px-0"
+        >
           <svg
             className="absolute size-full [mask-image:linear-gradient(white_10rem,transparent)] -z-10"
-          // style={{
-          //   maskImage:
-          //     "linear-gradient(transparent, white 20rem, white calc(100% - 20rem), transparent)",
-          // }}
           >
             <defs>
               <pattern
@@ -570,7 +571,7 @@ export default function Features() {
           <div className="relative flex size-full h-[26rem] items-center justify-center p-10">
             <div className="relative">
               {/* ID 1 - Top Left */}
-              <div className="absolute top-[6rem] left-[6rem] z-50 pointer-events-auto">
+              <div className="absolute top-[4rem] left-[4.3rem] sm:top-[6rem] sm:left-[6rem] z-50 pointer-events-auto">
                 <div className="relative">
                   <div className="absolute top-1/2 left-[68%] -translate-x-[60%] -translate-y-1/2 size-12 animate-pulse blur-lg" style={{ backgroundColor: '#B95422', opacity: '1' }}></div>
                   <AnimatedTooltip items={[teamMembers[3]]} />
@@ -578,7 +579,7 @@ export default function Features() {
               </div>
 
               {/* ID 2 - Top Right */}
-              <div className="absolute top-[6rem] right-[7rem] z-50 pointer-events-auto">
+              <div className="absolute top-[4rem] right-[5rem] sm:top-[6rem] sm:right-[7rem] z-50 pointer-events-auto">
                 <div className="relative">
                   <div className="absolute top-1/2 left-[68%] -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B95422', opacity: '1' }}></div>
                   <AnimatedTooltip items={[teamMembers[2]]} />
@@ -586,7 +587,7 @@ export default function Features() {
               </div>
 
               {/* ID 3 - Bottom Right */}
-              <div className="absolute bottom-[6rem] right-[7rem] z-50 pointer-events-auto">
+              <div className="absolute bottom-[4rem] right-[5rem] sm:bottom-[6rem] sm:right-[7rem] z-50 pointer-events-auto">
                 <div className="relative">
                   <div className="absolute top-1/2 left-[68%] -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B95422', opacity: '1' }}></div>
                   <AnimatedTooltip items={[teamMembers[0]]} />
@@ -594,14 +595,19 @@ export default function Features() {
               </div>
 
               {/* ID 4 - Bottom Left */}
-              <div className="absolute bottom-[6rem] left-[6rem] z-50 pointer-events-auto">
+              <div className="absolute bottom-[4rem] left-[4.3rem] sm:bottom-[6rem] sm:left-[6rem] z-50 pointer-events-auto">
                 <div className="relative">
                   <div className="absolute top-1/2 left-[68%] -translate-x-1/2 -translate-y-1/2 size-12 animate-pulse blur-lg -z-10" style={{ backgroundColor: '#B95422', opacity: '1' }}></div>
                   <AnimatedTooltip items={[teamMembers[1]]} />
                 </div>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative
+              /* Mobile styles */
+              scale-75
+              /* Desktop styles */
+              sm:scale-100"
+            >
               {[0, 45, 135, 180, 225, 315, 360].map((rotation, index) => (
                 <div
                   key={rotation}

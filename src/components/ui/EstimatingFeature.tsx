@@ -66,7 +66,7 @@ export default function Example() {
         <Badge className="mx-auto">Estimating at Scale</Badge>
         <h2
           ref={headingRef}
-          className="relative mx-auto mt-2 inline-block bg-gradient-to-b from-gray-900 to-gray-800 bg-clip-text py-2 text-4xl font-bold tracking-tighter text-transparent transition-all duration-200 before:absolute before:left-[var(--mouse-x)] before:top-[var(--mouse-y)] before:z-0 before:h-32 before:w-32 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-gradient-to-b before:from-[#2286B9] before:to-transparent before:opacity-100 before:content-[''] before:mix-blend-color dark:from-black dark:to-gray-300 sm:text-6xl"
+          className="relative mx-auto mt-2 inline-block bg-gradient-to-b from-gray-900 to-gray-800 bg-clip-text py-2 text-4xl font-bold tracking-tighter text-transparent transition-all duration-200 before:absolute before:left-[var(--mouse-x)] before:top-[var(--mouse-y)] before:z-0 before:h-32 before:w-32 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-gradient-to-b before:from-[#2286B9] before:to-transparent before:opacity-100 before:content-[''] before:mix-blend-color dark:from-gray-500 dark:to-black sm:text-6xl"
         >
           Architected for speed and reliability
         </h2>
@@ -80,7 +80,7 @@ export default function Example() {
           {stats.map((stat, index) => (
             <React.Fragment key={index}>
               <div className="text-center md:border-l md:border-gray-200 md:first:border-none md:dark:border-gray-800">
-                <dd className="inline-block bg-gradient-to-t from-[#2286B9] to-[#2286B9] bg-clip-text text-5xl font-bold tracking-tight text-transparent dark:from-[#2286B9] dark:to-blue-400 lg:text-6xl">
+                <dd className="inline-block bg-gradient-to-t from-[#2286B9] to-black bg-clip-text text-5xl font-bold tracking-tight text-transparent dark:from-[#2286B9] dark:to-black lg:text-6xl">
                   {stat.value}
                 </dd>
                 <dt className="mt-1 text-gray-900 dark:text-gray-900">

@@ -40,12 +40,24 @@ const stats = [
 
 export default function Example() {
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const [isDesktop, setIsDesktop] = React.useState(false);
 
   useEffect(() => {
+    setIsDesktop(!window.matchMedia('(max-width: 768px)').matches);
+    
     const heading = headingRef.current;
     if (!heading) return;
 
+    // Remove any existing glow styles for mobile devices
+    if (!isDesktop) {
+      heading.style.removeProperty('--mouse-x');
+      heading.style.removeProperty('--mouse-y');
+      return;
+    }
+    
     const handleMouseMove = (e: MouseEvent) => {
+      if ('pointerType' in e && e.pointerType === 'touch') return;
+      
       const rect = heading.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
@@ -58,15 +70,20 @@ export default function Example() {
     return () => {
       heading.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []);
+  }, [isDesktop]);
+
+  const glowClasses = isDesktop
+    ? 'before:absolute before:left-[var(--mouse-x)] before:top-[var(--mouse-y)] before:z-0 before:h-32 before:w-32 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-gradient-to-b before:from-[#2286B9] before:to-transparent before:opacity-100 before:content-[\'\'] before:mix-blend-color'
+    : '';
 
   return (
+    /* Hero section highlighting AI-powered construction cost estimation features and key statistics */
     <section className="py-24 px-4 xl:px-0">
       <div className="mx-auto w-full max-w-6xl text-center">
         <Badge className="mx-auto">Estimating at Scale</Badge>
         <h2
           ref={headingRef}
-          className="relative mx-auto mt-2 inline-block bg-gradient-to-b from-gray-900 to-gray-800 bg-clip-text py-2 text-4xl font-bold tracking-tighter text-transparent transition-all duration-200 before:absolute before:left-[var(--mouse-x)] before:top-[var(--mouse-y)] before:z-0 before:h-32 before:w-32 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-gradient-to-b before:from-[#2286B9] before:to-transparent before:opacity-100 before:content-[''] before:mix-blend-color dark:from-gray-500 dark:to-black sm:text-6xl"
+          className={`relative mx-auto mt-2 inline-block bg-gradient-to-b from-gray-900 to-gray-800 bg-clip-text py-2 text-4xl font-bold tracking-tighter text-transparent transition-all duration-200 dark:from-gray-500 dark:to-black sm:text-6xl ${glowClasses}`}
         >
           Architected for speed and reliability
         </h2>

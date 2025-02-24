@@ -55,33 +55,38 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
     <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
       <div className="fixed inset-0 bg-black/40 backdrop-blur-sm" aria-hidden="true" />
       
+      {/* Modal Container - Full screen overlay */}
       <div className="fixed inset-0 flex items-center justify-center p-4">
-        <Dialog.Panel className="mx-auto w-full max-w-2xl rounded-2xl bg-white p-10 shadow-2xl">
-          <div className="flex justify-between items-center mb-8">
-            <div>
-              <Dialog.Title className="text-3xl font-bold text-gray-900">
-                Join the Waitlist
-              </Dialog.Title>
-              <p className="mt-2 text-lg text-gray-600">
-                Discover how Buildease streamlines your operations, reduces costs, and boosts your bottom line with AI-powered construction management
-              </p>
-            </div>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="text-gray-500 hover:text-gray-700 transition-colors"
-            >
-              <XMarkIcon className="h-6 w-6" />
-            </button>
+        {/* Modal Panel - Mobile: Full width, Desktop: Max width 600px */}
+        <Dialog.Panel className="mx-auto w-full max-w-2xl rounded-2xl bg-white p-3 sm:p-6 shadow-2xl relative">
+          {/* Close Button - Mobile: Closer to edge, Desktop: Further from edge */}
+          <button
+            onClick={() => setIsOpen(false)}
+            className="absolute top-2 right-2 sm:top-3 sm:right-3 text-gray-500 hover:text-gray-700 transition-colors"
+          >
+            <XMarkIcon className="h-6 w-6" />
+          </button>
+          
+          {/* Header Section - Reduced vertical spacing */}
+          <div className="mb-4 sm:mb-6">
+            <Dialog.Title className="text-xl sm:text-2xl font-bold text-gray-900">
+              Join the Waitlist
+            </Dialog.Title>
+            <p className="mt-1 text-sm sm:text-base text-gray-600">
+              Discover how Buildease streamlines your operations, reduces costs, and boosts your bottom line with AI-powered construction management.
+            </p>
           </div>
 
+          {/* Form Content - Conditional render based on submission status */}
           {!submitted ? (
             <form 
               onSubmit={handleSubmit}
-              className="space-y-6"
+              className="space-y-3 sm:space-y-4"
             >
-              <p className="text-sm text-gray-500 mb-4">* Required Fields</p>
+              <p className="text-sm text-gray-500 mb-2 sm:mb-4">* Required Fields</p>
 
-              <div className="grid grid-cols-2 gap-4">
+              {/* Name Fields - Mobile: Stack vertically, Desktop: Side by side */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <p>
                   <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700">
                     First Name*

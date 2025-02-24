@@ -226,7 +226,7 @@ export default function Features() {
           </svg>
           
           {/* Orbit Component */}
-          <div className="pointer-events-none p-10 select-none">
+          <div className="pointer-events-none p-10 pb-20 sm:pb-20 select-none">
             <div className="relative flex flex-col items-center justify-center">
               <Orbit
                 durationSeconds={40}

@@ -18,6 +18,7 @@ import ChipViz from "./ChipViz";
 export default function Features() {
   const [orbitRadius, setOrbitRadius] = useState(180)
 
+  // Handle responsive orbit size
   useEffect(() => {
     const handleResize = () => {
       setOrbitRadius(window.innerWidth < 640 ? 140 : 180)
@@ -67,9 +68,9 @@ export default function Features() {
       id="solutions"
       className="relative mx-auto max-w-6xl scroll-my-24"
     >
-      {/* Vertical Lines */}
+      {/* Background Vertical Lines */}
       <div className="pointer-events-none inset-0 select-none">
-        {/* Left */}
+        {/* Left Line */}
         <div
           className="absolute inset-y-0 my-[-5rem] w-px"
           style={{
@@ -89,8 +90,7 @@ export default function Features() {
             />
           </svg>
         </div>
-
-        {/* Right */}
+        {/* Right Line */}
         <div
           className="absolute inset-y-0 right-0 my-[-5rem] w-px"
           style={{
@@ -110,7 +110,7 @@ export default function Features() {
             />
           </svg>
         </div>
-        {/* Middle */}
+        {/* Middle Line */}
         <div
           className="absolute inset-y-0 left-1/2 -z-10 my-[-5rem] w-px"
           style={{
@@ -130,7 +130,7 @@ export default function Features() {
             />
           </svg>
         </div>
-        {/* 25% */}
+        {/* 25% Line */}
         <div
           className="absolute inset-y-0 left-1/4 -z-10 my-[-5rem] hidden w-px sm:block"
           style={{
@@ -150,7 +150,7 @@ export default function Features() {
             />
           </svg>
         </div>
-        {/* 75% */}
+        {/* 75% Line */}
         <div
           className="absolute inset-y-0 left-3/4 -z-10 my-[-5rem] hidden w-px sm:block"
           style={{
@@ -171,8 +171,10 @@ export default function Features() {
           </svg>
         </div>
       </div>
+
+      {/* Main Content Grid */}
       <div className="grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-0">
-        {/* Content */}
+        {/* First Feature: Smart Autonomous Systems */}
         <div className="col-span-2 my-auto px-2">
           <h2 className="relative text-lg font-semibold tracking-tight" style={{ color: '#2286b9' }}>
             Smart Autonomous Systems
@@ -185,7 +187,10 @@ export default function Features() {
             Deploy intelligent AI agents and automated systems across your team, sales pipeline, and business operations with our integrated platform.
           </p>
         </div>
+        
+        {/* Orbit Visualization */}
         <div className="relative col-span-2 flex items-center justify-center overflow-hidden">
+          {/* Background Pattern */}
           <svg
             className="absolute size-full [mask-image:linear-gradient(transparent,white_10rem)]"
           // style={{
@@ -219,6 +224,8 @@ export default function Features() {
               fill="url(#diagonal-feature-pattern)"
             />
           </svg>
+          
+          {/* Orbit Component */}
           <div className="pointer-events-none p-10 select-none">
             <div className="relative flex flex-col items-center justify-center">
               <Orbit
@@ -368,6 +375,7 @@ export default function Features() {
           </div>
         </div>
 
+        {/* Second Feature: Precision Sales Management */}
         <div className="col-span-2 my-auto px-2">
           <h2 className="relative text-lg font-semibold tracking-tight" style={{ color: '#2286b9' }}>
             Precision Sales Management
@@ -380,7 +388,14 @@ export default function Features() {
             Revolutionize your sales process with AI that converts raw data into actionable insights in real-time. Make faster, smarter decisions, reduce inefficiencies, and maximize profits across your pipeline.
           </p>
         </div>
-        <div className="relative col-span-2 flex items-center justify-center overflow-hidden">
+        
+        {/* Sales Grid Visualization */}
+        <div className="relative col-span-2 flex items-center justify-center overflow-visible 
+          /* Mobile styles */
+          -mx-10 px-4
+          /* Desktop styles */
+          sm:mx-0 sm:px-0"
+        >
           <svg className="absolute size-full">
             <defs>
               <pattern
@@ -408,7 +423,12 @@ export default function Features() {
               fill="url(#diagonal-feature-pattern)"
             />
           </svg>
-          <div className="relative h-[432px] w-[432px]">
+          <div className="relative h-[432px] w-[432px] 
+            /* Mobile styles */
+            scale-75
+            /* Desktop styles */
+            sm:scale-100"
+          >
             <svg
               id="grid"
               xmlns="http://www.w3.org/2000/svg"
@@ -495,6 +515,8 @@ export default function Features() {
             </div>
           </div>
         </div>
+
+        {/* Third Feature: Automated Quality Control */}
         <div className="col-span-2 my-auto px-2">
           <h2 className="relative text-lg font-semibold tracking-tight" style={{ color: '#2286b9' }}>
             Automated Quality Control
@@ -509,6 +531,8 @@ export default function Features() {
           corrections and ensuring that all work meets the highest standards.
           </p>
         </div>
+        
+        {/* Quality Control Visualization */}
         <div className="relative col-span-2 flex items-center justify-center overflow-visible">
           <svg
             className="absolute size-full [mask-image:linear-gradient(white_10rem,transparent)] -z-10"

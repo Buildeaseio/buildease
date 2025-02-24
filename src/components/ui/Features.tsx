@@ -1,3 +1,4 @@
+"use client"
 import {
   RiBuilding2Line,
   RiCheckLine,
@@ -8,12 +9,25 @@ import {
   RiMoneyDollarCircleLine,
   RiTeamLine
 } from "@remixicon/react";
+import { useEffect, useState } from 'react';
 import 'remixicon/fonts/remixicon.css';
 import { Orbit } from "../Orbit";
 import { AnimatedTooltip } from "./animated-tooltip";
 import ChipViz from "./ChipViz";
 
 export default function Features() {
+  const [orbitRadius, setOrbitRadius] = useState(180)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setOrbitRadius(window.innerWidth < 640 ? 140 : 180)
+    }
+    
+    handleResize() // Set initial size
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   const teamMembers = [
     {
       id: 1,
@@ -209,7 +223,7 @@ export default function Features() {
             <div className="relative flex flex-col items-center justify-center">
               <Orbit
                 durationSeconds={40}
-                radiusPx={180}
+                radiusPx={orbitRadius}
                 keepUpright
                 orbitingObjects={[
                   <div
@@ -218,7 +232,7 @@ export default function Features() {
                   >
                     <RiBuilding2Line className="z-10 size-5 text-gray-900" />
                     <div className="absolute size-10 rounded-full bg-white/50 ring-1 shadow-lg ring-black/5"></div>
-                    <div className="absolute -top-5 left-4">
+                    <div className="absolute -bottom-12 sm:-top-5 sm:left-4">
                       <div className="flex gap-1">
                         <div className="flex items-center justify-center rounded-l-full bg-[#2287B9] p-1 text-xs ring-1 ring-gray-200">
                           <RiCircleLine className="size-3 shrink-0 text-white" />
@@ -242,7 +256,7 @@ export default function Features() {
                   >
                     <RiMoneyDollarCircleLine className="z-10 size-5 text-gray-900" />
                     <div className="absolute size-10 rounded-full bg-white/50 ring-1 shadow-lg ring-black/5"></div>
-                    <div className="absolute -top-5 left-4">
+                    <div className="absolute -bottom-12 sm:-top-5 sm:left-4">
                       <div className="flex gap-1">
                         <div className="flex items-center justify-center rounded-l-full bg-[#2287B9] p-1 text-xs ring-1 ring-gray-200">
                           <RiLoaderFill className="size-3 shrink-0 animate-spin text-white" />
@@ -266,8 +280,8 @@ export default function Features() {
                   >
                     <RiHammerLine className="z-10 size-5 text-gray-900" />
                     <div className="absolute size-10 rounded-full bg-white/50 ring-1 shadow-lg ring-black/5"></div>
-                    <div className="absolute -top-5 left-4">
-                    <div className="flex gap-1">
+                    <div className="absolute -bottom-12 sm:-top-5 sm:left-4">
+                      <div className="flex gap-1">
                         <div className="flex items-center justify-center rounded-l-full bg-[#2287B9] p-1 text-xs ring-1 ring-gray-200">
                           <RiLoaderFill className="size-3 shrink-0 animate-spin text-white" />
                         </div>
@@ -289,7 +303,7 @@ export default function Features() {
                   >
                     <RiTeamLine className="z-10 size-5 text-gray-900" />
                     <div className="absolute size-10 rounded-full bg-white/50 ring-1 shadow-lg ring-black/5"></div>
-                    <div className="absolute -top-5 left-4">
+                    <div className="absolute -bottom-12 sm:-top-5 sm:left-4">
                       <div className="flex gap-1">
                         <div className="flex items-center justify-center rounded-l-full bg-[#2287B9] p-1 text-xs ring-1 ring-gray-200">
                           <RiCheckLine className="size-3 shrink-0 text-white" />
@@ -313,7 +327,7 @@ export default function Features() {
                   >
                     <RiLineChartLine className="z-10 size-5 text-gray-900" />
                     <div className="absolute size-10 rounded-full bg-white/50 ring-1 shadow-lg ring-black/5"></div>
-                    <div className="absolute -top-5 left-4">
+                    <div className="absolute -bottom-12 sm:-top-5 sm:left-4">
                       <div className="flex gap-1">
                         <div className="flex items-center justify-center rounded-l-full bg-[#2287B9] p-1 text-xs ring-1 ring-gray-200">
                           <RiLoaderFill className="size-3 shrink-0 animate-spin text-white" />
@@ -332,7 +346,7 @@ export default function Features() {
                   </div>,
                 ]}
               >
-                <div className="relative flex h-48 w-48 items-center justify-center">
+                <div className="relative flex h-32 w-32 sm:h-48 sm:w-48 items-center justify-center">
                   <div className="rounded-full p-1 ring-1 ring-black/10">
                     <div className="relative z-10 flex size-20 items-center justify-center rounded-full bg-white ring-1 shadow-[inset_0px_-15px_20px_rgba(0,0,0,0.1),0_7px_10px_0_rgba(0,0,0,0.15)] ring-black/20">
                       <svg

@@ -119,24 +119,28 @@ export function NavBar() {
               open ? "" : "hidden",
             )}
           >
-            <ul className="space-y-4 font-medium">
+            <ul className="space-y-4 font-medium text-center">
               <li onClick={() => setOpen(false)}>
-                <Link href="/solutions"></Link>
+                <Link href="/solutions" className="text-gray-900 hover:text-[#2286b9]">
+                  Solutions
+                </Link>
               </li>
               <li onClick={() => setOpen(false)}>
-                <Link href="/use-cases"></Link>
+                <Link href="/use-cases" className="text-gray-900 hover:text-[#2286b9]">
+                  Use Cases
+                </Link>
               </li>
               <li onClick={() => setOpen(false)}>
-                <Link href="/products"></Link>
+                <Link href="/products" className="text-gray-900 hover:text-[#2286b9]">
+                  Blog
+                </Link>
               </li>
             </ul>
             <button
-              data-cal-namespace="30min"
-              data-cal-link="buildease/30min"
-              data-cal-config='{"layout":"month_view"}'
-              className="text-lg"
+              onClick={() => setIsFormOpen(true)}
+              className="w-full rounded-md border border-gray-300 bg-white py-2 hover:bg-gray-50 font-medium"
             >
-              Book a Demo
+              Join Waitlist
             </button>
           </nav>
         </div>

@@ -109,17 +109,17 @@ const Footer = () => {
             fill="url(#diagonal-footer-pattern)"
           />
         </svg>
-        <div className="mr-auto flex w-full justify-between lg:w-fit lg:flex-col">
+        <div className="mr-auto flex w-full flex-col items-center sm:items-start sm:justify-between lg:w-fit lg:flex-col">
           <Link
             href="/"
             className="flex items-center gap-1 font-medium text-gray-700 select-none sm:text-sm"
           >
-            <SolarLogo className="ml-5 w-20" />
-            <span className="-ml-2 text-xl font-semibold text-gray-900">Buildease</span>
+            <SolarLogo className="w-20 -ml-6 sm:ml-10" />
+            <span className="-ml-4 text-xl font-semibold text-gray-900">Buildease</span>
           </Link>
 
-          <div>
-            <div className="mt-4 flex items-center ml-10">
+          <div className="flex flex-col items-center sm:items-start">
+            <div className="mt-4 flex items-center justify-center sm:ml-22">
               {/* Social Icons */}
               <Link
                 href="https://www.linkedin.com/company/buildeaseio"
@@ -146,7 +146,7 @@ const Footer = () => {
                 <RiTwitterXFill className="size-5" />
               </Link>
             </div>
-            <div className="ml-10 hidden text-sm text-gray-700 lg:inline">
+            <div className="text-sm text-gray-700 sm:ml-10 lg:inline">
               &copy; {CURRENT_YEAR} Buildease Software, Inc.
             </div>
           </div>
@@ -154,7 +154,7 @@ const Footer = () => {
 
         {/* Footer Sections */}
         {Object.entries(sections).map(([key, section]) => (
-          <div key={key} className="mt-10 min-w-44 pl-2 lg:mt-0 lg:pl-0">
+          <div key={key} className="mt-10 min-w-44 text-center sm:text-left sm:pl-2 lg:mt-0 lg:pl-0">
             <h3 className="mb-4 font-medium text-gray-900 sm:text-sm">
               {section.title}
             </h3>

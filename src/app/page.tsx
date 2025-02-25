@@ -1,3 +1,4 @@
+"use client"
 import Testimonial from "@/components/ui/AutonomousFeature"
 import { CallToAction } from "@/components/ui/CallToAction"
 import EstimatingFeature from "@/components/ui/EstimatingFeature"

@@ -6,6 +6,7 @@ import { cx } from "@/lib/utils"
 import { getCalApi } from "@calcom/embed-react"
 import { RiCloseFill, RiMenuFill } from "@remixicon/react"
 import Link from "next/link"
+import { usePathname, useRouter } from "next/navigation"
 import React, { useEffect, useState } from "react"
 import { SolarLogo } from "../../../public/SolarLogo"
 import { Button } from "../Button"
@@ -13,9 +14,32 @@ import DemoForm from "./DemoForm"
 
 export function NavBar() {
   const [open, setOpen] = React.useState(false)
-  const [dropdownOpen, setDropdownOpen] = useState(false)
   const [isFormOpen, setIsFormOpen] = useState(false)
   const scrolled = useScroll(15)
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      setOpen(false);
+    }
+  };
+
+  const handleNavigation = async (sectionId: string) => {
+    if (pathname !== '/') {
+      // If we're not on the home page, navigate there first
+      await router.push('/');
+      // Wait for a short moment to ensure the page has loaded
+      setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 100);
+    } else {
+      // If we're already on the home page, just scroll
+      scrollToSection(sectionId);
+    }
+  };
 
   useEffect(() => {
     (async function () {
@@ -35,7 +59,7 @@ export function NavBar() {
     <>
       <header
         className={cx(
-          "fixed inset-x-4 top-4 z-50 mx-auto flex max-w-6xl justify-center rounded-lg border border-transparent px-3 py-3 transition duration-300",
+          "fixed inset-x-4 top-4 z-[9999] mx-auto flex max-w-6xl justify-center rounded-lg border border-transparent px-3 py-3 transition duration-300",
           scrolled || open
             ? "border-gray-200/50 bg-white/80 shadow-2xl shadow-black/5 backdrop-blur-sm"
             : "bg-white/0",
@@ -54,41 +78,19 @@ export function NavBar() {
             <nav className="hidden sm:block md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:transform">
               <div className="flex items-center gap-10 font-medium">
                 {/* Desktop menu items */}
-                <Link className="px-2 py-1 text-gray-900 transition-colors duration-200 hover:text-[#2286b9]" href="/solutions">
+                <button 
+                  onClick={() => handleNavigation('solutions')}
+                  className="px-2 py-1 text-gray-900 transition-colors duration-200 hover:text-[#2286b9]"
+                >
                   Solutions
-                </Link>
-                {/* Desktop dropdown */}
-                <div className="relative">
-                  <button 
-                    onClick={() => setDropdownOpen(!dropdownOpen)}
-                    className="px-2 py-1 text-gray-900 transition-colors duration-200 hover:text-[#2286b9] flex items-center gap-1 cursor-pointer"
-                  >
-                    Products
-                    <svg 
-                      className={`w-4 h-4 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  {dropdownOpen && (
-                    <div className="absolute top-full left-0 mt-2 w-48 rounded-xl shadow-lg bg-white/80 backdrop-blur-sm border border-gray-200/50 transition-all duration-200">
-                      <div className="py-1.5">
-                        <Link 
-                          href="/use-cases" 
-                          className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50/50 hover:text-[#2286b9] transition-colors duration-200"
-                          onClick={() => setDropdownOpen(false)}
-                        >
-                          Use Cases
-                        </Link>
-                        {/* Add more dropdown items here as needed */}
-                      </div>
-                    </div>
-                  )}
-                </div>
-                <Link className="px-2 py-1 text-gray-900 transition-colors duration-200 hover:text-[#2286b9]" href="/products">
+                </button>
+                <button 
+                  onClick={() => handleNavigation('features-title')}
+                  className="px-2 py-1 text-gray-900 transition-colors duration-200 hover:text-[#2286b9]"
+                >
+                  Use Cases
+                </button>
+                <Link className="px-2 py-1 text-gray-900 transition-colors duration-200 hover:text-[#2286b9]" href="/blog">
                   Blog
                 </Link>
               </div>
@@ -125,43 +127,24 @@ export function NavBar() {
             )}
           >
             <ul className="space-y-4 font-medium text-center">
-              <li onClick={() => setOpen(false)}>
-                <Link href="/solutions" className="text-gray-900 hover:text-[#2286b9]">
+              <li>
+                <button 
+                  onClick={() => handleNavigation('solutions')}
+                  className="text-gray-900 hover:text-[#2286b9] w-full text-center"
+                >
                   Solutions
-                </Link>
+                </button>
               </li>
               <li>
                 <button 
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="text-gray-900 hover:text-[#2286b9] flex items-center justify-center w-full gap-1"
+                  onClick={() => handleNavigation('features-title')}
+                  className="text-gray-900 hover:text-[#2286b9] w-full text-center"
                 >
-                  Products
-                  <svg 
-                    className={`w-4 h-4 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  Use Cases
                 </button>
-                {dropdownOpen && (
-                  <div className="mt-2 space-y-2">
-                    <Link 
-                      href="/use-cases" 
-                      className="block text-gray-900 hover:text-[#2286b9]"
-                      onClick={() => {
-                        setDropdownOpen(false);
-                        setOpen(false);
-                      }}
-                    >
-                      Use Cases
-                    </Link>
-                  </div>
-                )}
               </li>
               <li onClick={() => setOpen(false)}>
-                <Link href="/products" className="text-gray-900 hover:text-[#2286b9]">
+                <Link href="/blog" className="text-gray-900 hover:text-[#2286b9]">
                   Blog
                 </Link>
               </li>

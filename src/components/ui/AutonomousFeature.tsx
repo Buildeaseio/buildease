@@ -60,7 +60,7 @@ export default function Example() {
         </span>
         <h2
           id="features-title"
-          className="mt-2 inline-block bg-gradient-to-b from-black to-zinc-700 bg-clip-text py-2 text-3xl font-bold tracking-tighter text-transparent dark:from-gray-0 dark:to-zinc-500 sm:text-5xl"
+          className="mt-2 inline-block bg-gradient-to-b from-black to-zinc-700 bg-clip-text py-2 text-3xl font-bold tracking-tighter text-transparent dark:from-gray-0 dark:to-zinc-500 sm:text-5xl scroll-mt-32"
         >
           Revolutionize the way your business grows
         </h2>

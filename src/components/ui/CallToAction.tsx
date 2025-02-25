@@ -1,8 +1,13 @@
+"use client"
+
 import Image from "next/image"
-import Link from "next/link"
+import { useState } from "react"
 import { Button } from "../Button"
+import DemoForm from "./ContactForm"
 
 export function CallToAction() {
+  const [isFormOpen, setIsFormOpen] = useState(false)
+
   return (
     <section aria-labelledby="cta-title" className="mx-auto max-w-6xl">
       {/* Main grid container
@@ -60,16 +65,20 @@ export function CallToAction() {
             Ready to get started?
           </h2>
           <p className="mt-3 mb-8 text-lg text-gray-600">
-            Begin your smart farming journey today or talk to our agronomists
-            about your specific needs.
+          Start streamlining your construction projects today or connect with our experts to discuss your specific needs.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild className="text-md">
-              <Link href="#">Start now</Link>
+            <Button 
+              asChild 
+              className="text-md cursor-pointer"
+              onClick={() => setIsFormOpen(true)}
+            >
+              <span>Contact Us</span>
             </Button>
           </div>
         </div>
       </div>
+      <DemoForm isOpen={isFormOpen} setIsOpen={setIsFormOpen} />
     </section>
   )
 }

@@ -93,6 +93,7 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
                     <input
                       type="text"
                       id="firstName"
+                      name="firstName"
                       value={formData.firstName}
                       onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                       required

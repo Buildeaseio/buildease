@@ -10,7 +10,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(request: Request) {
   try {
     const formData = await request.json();
-    console.log('Received form data:', formData);
+    console.log('Raw form data:', JSON.stringify(formData, null, 2));
 
     const { firstName, lastName, email, phone, company, builderType, annualRevenue } = formData;
 

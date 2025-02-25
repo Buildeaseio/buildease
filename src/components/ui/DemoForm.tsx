@@ -58,21 +58,21 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
       {/* Modal Container - Full screen overlay */}
       <div className="fixed inset-0 flex items-center justify-center p-4">
         {/* Modal Panel - Mobile: Full width, Desktop: Max width 600px */}
-        <Dialog.Panel className="mx-auto w-full max-w-2xl rounded-2xl bg-white p-3 sm:p-6 shadow-2xl relative">
+        <Dialog.Panel className="mx-auto w-full max-w-2xl rounded-2xl bg-white p-2 sm:p-6 shadow-2xl relative">
           {/* Close Button - Mobile: Closer to edge, Desktop: Further from edge */}
           <button
             onClick={() => setIsOpen(false)}
-            className="absolute top-2 right-2 sm:top-3 sm:right-3 text-gray-500 hover:text-gray-700 transition-colors"
+            className="absolute top-1 right-1 sm:top-3 sm:right-3 text-gray-500 hover:text-gray-700 transition-colors"
           >
-            <XMarkIcon className="h-6 w-6" />
+            <XMarkIcon className="h-5 w-5 sm:h-6 sm:w-6" />
           </button>
           
           {/* Header Section - Reduced vertical spacing */}
-          <div className="mb-4 sm:mb-6">
-            <Dialog.Title className="text-xl sm:text-2xl font-bold text-gray-900">
+          <div className="mb-2 sm:mb-6">
+            <Dialog.Title className="text-lg sm:text-2xl font-bold text-gray-900">
               Join the Waitlist
             </Dialog.Title>
-            <p className="mt-1 text-sm sm:text-base text-gray-600">
+            <p className="mt-0.5 sm:mt-1 text-sm sm:text-base text-gray-600">
               Discover how Buildease streamlines your operations, reduces costs, and boosts your bottom line with AI-powered construction management.
             </p>
           </div>
@@ -81,9 +81,9 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
           {!submitted ? (
             <form 
               onSubmit={handleSubmit}
-              className="space-y-3 sm:space-y-4"
+              className="space-y-2 sm:space-y-4"
             >
-              <p className="text-sm text-gray-500 mb-2 sm:mb-4">* Required Fields</p>
+              <p className="text-xs sm:text-sm text-gray-500 mb-1 sm:mb-4">* Required Fields</p>
 
               {/* Name Fields - Mobile: Stack vertically, Desktop: Side by side */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -96,7 +96,7 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
                       value={formData.firstName}
                       onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                       required
-                      className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
+                      className="mt-1 sm:mt-2 block w-full rounded-lg border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
                     />
                   </label>
                 </p>
@@ -108,7 +108,7 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
                       type="text"
                       name="lastName"
                       required
-                      className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
+                      className="mt-1 sm:mt-2 block w-full rounded-lg border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
                     />
                   </label>
                 </p>
@@ -121,7 +121,7 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
                     type="tel"
                     name="phone"
                     required
-                    className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
+                    className="mt-1 sm:mt-2 block w-full rounded-lg border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
                   />
                 </label>
               </p>
@@ -133,7 +133,7 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
                     type="text"
                     name="company"
                     required
-                    className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
+                    className="mt-1 sm:mt-2 block w-full rounded-lg border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
                   />
                 </label>
               </p>
@@ -145,7 +145,7 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
                     type="email"
                     name="email"
                     required
-                    className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
+                    className="mt-1 sm:mt-2 block w-full rounded-lg border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
                   />
                 </label>
               </p>
@@ -156,7 +156,7 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
                   <select
                     name="builderType"
                     required
-                    className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
+                    className="mt-1 sm:mt-2 block w-full rounded-lg border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
                   >
                     <option value="">Select</option>
                     <option value="residential-homebuilder">Residential – Homebuilder</option>
@@ -173,7 +173,7 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
                   <select
                     name="annualRevenue"
                     required
-                    className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
+                    className="mt-1 sm:mt-2 block w-full rounded-lg border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
                   >
                     <option value="">Select</option>
                     <option value="0-499k">$0 – 499K</option>
@@ -194,7 +194,7 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group relative w-full inline-flex items-center justify-center overflow-hidden rounded-lg bg-[#2286b9] px-8 py-4 font-medium text-white transition-all duration-200 hover:bg-[#2286b9]/90 hover:shadow-lg hover:translate-y-[-2px] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                  className="group relative w-full inline-flex items-center justify-center overflow-hidden rounded-lg bg-[#2286b9] px-6 sm:px-8 py-2.5 sm:py-4 font-medium text-white transition-all duration-200 hover:bg-[#2286b9]/90 hover:shadow-lg hover:translate-y-[-2px] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit'}
                 </button>

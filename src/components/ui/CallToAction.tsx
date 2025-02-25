@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { useState } from "react"
 import { Button } from "../Button"
-import DemoForm from "./ContactForm"
+import DemoForm from "./DemoForm"
 
 export function CallToAction() {
   const [isFormOpen, setIsFormOpen] = useState(false)

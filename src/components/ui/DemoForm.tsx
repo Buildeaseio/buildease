@@ -24,15 +24,12 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
     setError(null)
 
     try {
-      const formData = new FormData(e.currentTarget)
-      const data = Object.fromEntries(formData)
-
       const response = await fetch('/api/demo-request', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(formData),
       })
 
       const result = await response.json()

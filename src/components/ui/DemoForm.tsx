@@ -52,7 +52,7 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
   }
 
   return (
-    <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
+    <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-[10000]">
       <div className="fixed inset-0 bg-black/40 backdrop-blur-sm" aria-hidden="true" />
       
       {/* Modal Container - Full screen overlay */}

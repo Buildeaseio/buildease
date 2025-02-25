@@ -105,6 +105,8 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
                     <input
                       type="text"
                       name="lastName"
+                      value={formData.lastName}
+                      onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                       required
                       className="mt-1 sm:mt-2 block w-full rounded-lg border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
                     />
@@ -118,6 +120,8 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
                   <input
                     type="tel"
                     name="phone"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     required
                     className="mt-1 sm:mt-2 block w-full rounded-lg border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
                   />
@@ -130,6 +134,8 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
                   <input
                     type="text"
                     name="company"
+                    value={formData.company}
+                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     required
                     className="mt-1 sm:mt-2 block w-full rounded-lg border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
                   />
@@ -142,6 +148,8 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
                   <input
                     type="email"
                     name="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
                     className="mt-1 sm:mt-2 block w-full rounded-lg border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
                   />
@@ -153,6 +161,8 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
                   Which builder type best describes your business?*
                   <select
                     name="builderType"
+                    value={formData.builderType}
+                    onChange={(e) => setFormData({ ...formData, builderType: e.target.value })}
                     required
                     className="mt-1 sm:mt-2 block w-full rounded-lg border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
                   >
@@ -170,6 +180,8 @@ export default function DemoForm({ isOpen, setIsOpen }: { isOpen: boolean, setIs
                   What is your average annual revenue?*
                   <select
                     name="annualRevenue"
+                    value={formData.annualRevenue}
+                    onChange={(e) => setFormData({ ...formData, annualRevenue: e.target.value })}
                     required
                     className="mt-1 sm:mt-2 block w-full rounded-lg border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-gray-900 shadow-sm transition-colors focus:border-[#2286b9] focus:outline-none focus:ring-2 focus:ring-[#2286b9]/20"
                   >

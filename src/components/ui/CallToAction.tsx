@@ -34,7 +34,7 @@ export function CallToAction() {
           <Image
             aria-hidden
             alt="Buildease Dashboard"
-            src="/images/buildease-platform.png"
+            src="/images/buildease-mockup.png"
             height={1000}
             width={1000}
             className="absolute inset-0 -z-10 rounded-2xl blur-xl"
@@ -42,7 +42,7 @@ export function CallToAction() {
           {/* Main image */}
           <Image
             alt="Buildease Dashboard"
-            src="/images/buildease-platform.png"
+            src="/images/buildease-mockup.png"
             height={1000}
             width={1000}
             className="relative z-10 rounded-2xl"
